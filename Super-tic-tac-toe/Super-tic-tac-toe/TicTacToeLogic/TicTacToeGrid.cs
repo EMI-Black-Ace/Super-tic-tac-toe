@@ -56,7 +56,7 @@ namespace Super_tic_tac_toe
                 throw new ArgumentException("column or row selection invalid: " + column + ", " + row);
 
             grid[column][row].ClaimCell(player);
-            CheckWinner(column, row);
+            CheckWinner(column, row, player);
         }
 
         public TicTacToeCellStatus CellStatus(int column, int row)
@@ -74,6 +74,7 @@ namespace Super_tic_tac_toe
                 grid[1][row] == grid[2][row])
             {
                 DeclareWinner(player);
+                return;
             }
 
             //check for vertical winner
@@ -81,6 +82,7 @@ namespace Super_tic_tac_toe
                 grid[column][1] == grid[column][2])
             {
                 DeclareWinner(player);
+                return;
             }
 
             //check for diagonal winner
@@ -88,18 +90,31 @@ namespace Super_tic_tac_toe
                 (grid[0][2] == grid[1][1] && grid[1][1] == grid[2][0]))
             {
                 DeclareWinner(player);
+                return;
             }
 
             //TODO:  Check for stalemate condition
-            stalemate;
+            for(int i = 0; i < 3; ++i)
+            {
+                for(int j = 0; j < 3; ++j)
+                {
+                    if (grid[i][j].Status == TicTacToeCellStatus.Unclaimed)
+                    {
+                        return;
+                    }
+                }
+            }
+            DeclareWinner(TicTacToeCellStatus.Unclaimed);
         }
 
         private void DeclareWinner(TicTacToeCellStatus player)
         {
             if (player == TicTacToeCellStatus.X)
                 gridWinner = TicTacToeGridStatus.X;
-            else
+            else if (player == TicTacToeCellStatus.O)
                 gridWinner = TicTacToeGridStatus.O;
+            else
+                gridWinner = TicTacToeGridStatus.Stalemate;
             OnGridWin();
             return;
         }
