@@ -47,16 +47,16 @@ namespace Super_tic_tac_toe
                                          };
         }
 
-        public void ClaimCell(int column, int row, TicTacToeCellStatus player)
+        public void ClaimCell(int X, int Y, TicTacToeCellStatus player)
         {
             if (gridWinner != TicTacToeGridStatus.Contested)
                 throw new TicTacToeException("Grid is already filled in");
 
-            if (column < 0 || column > 2 || row < 0 || row > 2)
-                throw new ArgumentException("column or row selection invalid: " + column + ", " + row);
+            if (X < 0 || X > 2 || Y < 0 || Y > 2)
+                throw new ArgumentException("column or row selection invalid: " + X + ", " + Y);
 
-            grid[column][row].ClaimCell(player);
-            CheckWinner(column, row, player);
+            grid[X][Y].ClaimCell(player);
+            CheckWinner(X, Y, player);
         }
 
         public TicTacToeCellStatus CellStatus(int column, int row)
