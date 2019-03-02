@@ -69,30 +69,30 @@ namespace Super_tic_tac_toe
         private void CheckWinner(int column, int row, TicTacToeCellStatus player)
         {
             //check for horizontal winner
-            if(grid[0][row] == grid[1][row] &&
-                grid[1][row] == grid[2][row])
+            if(grid[0][row].Status == grid[1][row].Status &&
+                grid[1][row].Status == grid[2][row].Status)
             {
                 DeclareWinner(player);
                 return;
             }
 
             //check for vertical winner
-            if (grid[column][0] == grid[column][1] &&
-                grid[column][1] == grid[column][2])
+            if (grid[column][0].Status == grid[column][1].Status &&
+                grid[column][1].Status == grid[column][2].Status)
             {
                 DeclareWinner(player);
                 return;
             }
 
             //check for diagonal winner
-            if((grid[0][0] == grid[1][1] && grid[1][1] == grid[2][2]) ||
-                (grid[0][2] == grid[1][1] && grid[1][1] == grid[2][0]))
+            if((grid[0][0].Status == grid[1][1].Status && grid[1][1].Status == grid[2][2].Status) ||
+                (grid[0][2].Status == grid[1][1].Status && grid[1][1].Status == grid[2][0].Status) &&
+                grid[1][1].Status != TicTacToeCellStatus.Unclaimed)
             {
                 DeclareWinner(player);
                 return;
             }
 
-            //TODO:  Check for stalemate condition
             for(int i = 0; i < 3; ++i)
             {
                 for(int j = 0; j < 3; ++j)
