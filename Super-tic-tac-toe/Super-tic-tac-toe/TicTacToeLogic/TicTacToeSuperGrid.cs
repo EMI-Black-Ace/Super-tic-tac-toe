@@ -28,6 +28,27 @@ namespace Super_tic_tac_toe
         /// </summary>
         public int NextMoveY { get; private set; } = -1;
 
+        public class TicTacToeGridEventArgs : EventArgs
+        {
+            public TicTacToeGridStatus Winner { get; private set; }
+            public int SubGridX { get; private set; }
+            public int SubGridY { get; private set; }
+
+            public TicTacToeGridEventArgs(int X, int Y, TicTacToeGridStatus vWinner)
+            {
+                SubGridX = X;
+                SubGridY = Y;
+                Winner = vWinner;
+            }
+        }
+        public delegate void GridWinHandler(object sender, TicTacToeGridEventArgs e);
+        public event GridWinHandler GridWon;
+
+        private void OnGridWin(int X, int Y, TicTacToeGridStatus Winner)
+        {
+            GridWon?.Invoke(this, new TicTacToeGridEventArgs(X, Y, Winner));
+        }
+
         public TicTacToeSuperGrid()
         {
             subGrids = new TicTacToeGrid[][]{
@@ -35,13 +56,6 @@ namespace Super_tic_tac_toe
                                             new TicTacToeGrid[]{ new TicTacToeGrid(), new TicTacToeGrid(), new TicTacToeGrid() },
                                             new TicTacToeGrid[]{ new TicTacToeGrid(), new TicTacToeGrid(), new TicTacToeGrid() }
                                          };
-            foreach(TicTacToeGrid[] gLines in subGrids)
-            {
-                foreach(TicTacToeGrid grid in gLines)
-                {
-                    grid.GridWon += SubGridWon;
-                }
-            }
         }
 
         public void ClaimCell(int gridX, int gridY, int X, int Y)
@@ -65,11 +79,6 @@ namespace Super_tic_tac_toe
             {
                 throw new TicTacToeException("player must make a move in subgrid " + NextMoveX.ToString() + ", " + NextMoveY.ToString() + "!");
             }
-        }
-
-        private void SubGridWon(object sender, TicTacToeGrid.TicTacToeGridEventArgs e)
-        {
-            throw new NotImplementedException();
         }
     }
 }
