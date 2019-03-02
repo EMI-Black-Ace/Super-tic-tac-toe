@@ -17,8 +17,7 @@ namespace Super_tic_tac_toe
     public class TicTacToeGrid
     {
         private TicTacToeCell[][] grid;
-        private TicTacToeGridStatus gridWinner = TicTacToeGridStatus.Contested;
-        public TicTacToeGridStatus GridWinner { get { return gridWinner; } }
+        public TicTacToeGridStatus GridWinner { get; private set; } = TicTacToeGridStatus.Contested;
 
         public class TicTacToeGridEventArgs : EventArgs
         {
@@ -35,7 +34,7 @@ namespace Super_tic_tac_toe
 
         private void OnGridWin()
         {
-            GridWon?.Invoke(this, new TicTacToeGridEventArgs(gridWinner));
+            GridWon?.Invoke(this, new TicTacToeGridEventArgs(GridWinner));
         }
         
         public TicTacToeGrid()
@@ -49,7 +48,7 @@ namespace Super_tic_tac_toe
 
         public void ClaimCell(int X, int Y, TicTacToeCellStatus player)
         {
-            if (gridWinner != TicTacToeGridStatus.Contested)
+            if (GridWinner != TicTacToeGridStatus.Contested)
                 throw new TicTacToeException("Grid is already filled in");
 
             if (X < 0 || X > 2 || Y < 0 || Y > 2)
@@ -110,11 +109,11 @@ namespace Super_tic_tac_toe
         private void DeclareWinner(TicTacToeCellStatus player)
         {
             if (player == TicTacToeCellStatus.X)
-                gridWinner = TicTacToeGridStatus.X;
+                GridWinner = TicTacToeGridStatus.X;
             else if (player == TicTacToeCellStatus.O)
-                gridWinner = TicTacToeGridStatus.O;
+                GridWinner = TicTacToeGridStatus.O;
             else
-                gridWinner = TicTacToeGridStatus.Stalemate;
+                GridWinner = TicTacToeGridStatus.Stalemate;
             OnGridWin();
             return;
         }

@@ -13,15 +13,20 @@ namespace Super_tic_tac_toe
 
     class TicTacToeSuperGrid
     {
-        private PlayerTurn whoseTurn = PlayerTurn.X;
-        public PlayerTurn WhoseTurn => WhoseTurn;
+        public PlayerTurn WhoseTurn { get; private set; } = PlayerTurn.X;
 
         private TicTacToeGrid[][] subGrids;
 
-        private int nextMoveX = -1;
-        public int NextMoveX => nextMoveX;
-        private int nextMoveY = -1;
-        public int NextMoveY => nextMoveY;
+        /// <summary>
+        /// The X coordinate of the subgrid the player is forced to play in.
+        /// -1 indicates the player can select any subgrid.
+        /// </summary>
+        public int NextMoveX { get; private set; } = -1;
+        /// <summary>
+        /// The X coordinate of the subgrid the player is forced to play in.
+        /// -1 indicates the player can select any subgrid.
+        /// </summary>
+        public int NextMoveY { get; private set; } = -1;
 
         public TicTacToeSuperGrid()
         {
@@ -42,11 +47,24 @@ namespace Super_tic_tac_toe
         public void ClaimCell(int gridX, int gridY, int X, int Y)
         {
             TicTacToeCellStatus player = WhoseTurn == PlayerTurn.X ? TicTacToeCellStatus.X : TicTacToeCellStatus.O;
-            if(NextMoveX == -1)
+            if(NextMoveX == -1 || (gridX == NextMoveX && gridY == NextMoveY))
             {
                 subGrids[gridX][gridY].ClaimCell(X, Y, player);
+                if(subGrids[X][Y].GridWinner == TicTacToeGridStatus.Contested)
+                {
+                    NextMoveX = X;
+                    NextMoveY = Y;
+                }
+                else
+                {
+                    NextMoveX = -1;
+                    NextMoveY = -1;
+                }
             }
-            incomplete;
+            else
+            {
+                throw new TicTacToeException("player must make a move in subgrid " + NextMoveX.ToString() + ", " + NextMoveY.ToString() + "!");
+            }
         }
 
         private void SubGridWon(object sender, TicTacToeGrid.TicTacToeGridEventArgs e)
