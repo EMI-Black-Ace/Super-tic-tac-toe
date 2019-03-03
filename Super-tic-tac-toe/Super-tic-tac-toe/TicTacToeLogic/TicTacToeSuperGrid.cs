@@ -12,7 +12,7 @@ namespace Super_tic_tac_toe
     }
     public enum TicTacToeWinner { X, O, Stalemate }
 
-    class TicTacToeSuperGrid
+    public class TicTacToeSuperGrid
     {
         public TicTacToePlayerTurn WhoseTurn { get; private set; } = TicTacToePlayerTurn.X;
 
@@ -65,6 +65,16 @@ namespace Super_tic_tac_toe
                                             new TicTacToeGrid[]{ new TicTacToeGrid(), new TicTacToeGrid(), new TicTacToeGrid() },
                                             new TicTacToeGrid[]{ new TicTacToeGrid(), new TicTacToeGrid(), new TicTacToeGrid() }
                                          };
+        }
+
+        public TicTacToeGridStatus CheckGridStatus(int gridX, int gridY)
+        {
+            return subGrids[gridX][gridY].GridWinner;
+        }
+
+        public TicTacToeCellStatus CheckCellStatus(int gridX, int gridY, int X, int Y)
+        {
+            throw new NotImplementedException();
         }
 
         public void ClaimCell(int gridX, int gridY, int X, int Y)
