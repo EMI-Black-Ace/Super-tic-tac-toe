@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace Super_tic_tac_toe
 {
-    public enum PlayerTurn
+    public enum TicTacToePlayerTurn
     {
         X, O
     }
+    public enum TicTacToeWinner { X, O, Stalemate }
 
     class TicTacToeSuperGrid
     {
-        public PlayerTurn WhoseTurn { get; private set; } = PlayerTurn.X;
+        public TicTacToePlayerTurn WhoseTurn { get; private set; } = TicTacToePlayerTurn.X;
 
         private TicTacToeGrid[][] subGrids;
 
@@ -44,6 +45,14 @@ namespace Super_tic_tac_toe
         public delegate void SubGridWinHandler(object sender, TicTacToeSuperGridEventArgs e);
         public event SubGridWinHandler GridWon;
 
+        public class TicTacToeWinEventArgs : EventArgs
+        {
+            public TicTacToeWinner Winner { get; private set; }
+            public TicTacToeWinEventArgs(TicTacToeWinner vWinner) => Winner = vWinner;
+        }
+        public delegate void OverallWinHandler(object sender, TicTacToeWinner winner);
+        public event OverallWinHandler GameWon;
+
         private void OnSubgridGridWin(int X, int Y, TicTacToeGridStatus Winner)
         {
             GridWon?.Invoke(this, new TicTacToeSuperGridEventArgs(X, Y, Winner));
@@ -60,7 +69,7 @@ namespace Super_tic_tac_toe
 
         public void ClaimCell(int gridX, int gridY, int X, int Y)
         {
-            TicTacToeCellStatus player = WhoseTurn == PlayerTurn.X ? TicTacToeCellStatus.X : TicTacToeCellStatus.O;
+            TicTacToeCellStatus player = WhoseTurn == TicTacToePlayerTurn.X ? TicTacToeCellStatus.X : TicTacToeCellStatus.O;
             if(NextMoveX == -1 || (gridX == NextMoveX && gridY == NextMoveY))
             {
                 subGrids[gridX][gridY].ClaimCell(X, Y, player);
@@ -83,7 +92,7 @@ namespace Super_tic_tac_toe
                     NextMoveX = -1;
                     NextMoveY = -1;
                 }
-                WhoseTurn = WhoseTurn == PlayerTurn.X ? PlayerTurn.O : PlayerTurn.X;
+                WhoseTurn = WhoseTurn == TicTacToePlayerTurn.X ? TicTacToePlayerTurn.O : TicTacToePlayerTurn.X;
             }
             else
             {
@@ -140,12 +149,12 @@ namespace Super_tic_tac_toe
             }
             if (Xclaims > Oclaims)
             {
-                DeclareWinner(PlayerTurn.X);
+                DeclareWinner(TicTacToePlayerTurn.X);
                 return true;
             }
             else if (Oclaims > Xclaims)
             {
-                DeclareWinner(PlayerTurn.O);
+                DeclareWinner(TicTacToePlayerTurn.O);
                 return true;
             }
             else
@@ -155,12 +164,12 @@ namespace Super_tic_tac_toe
 
         private void DeclareStalemate()
         {
-            throw new NotImplementedException();
+            GameWon?.Invoke(this, TicTacToeWinner.Stalemate);
         }
 
-        private void DeclareWinner(PlayerTurn whoseTurn)
+        private void DeclareWinner(TicTacToePlayerTurn whoWon)
         {
-            throw new NotImplementedException();
+            GameWon?.Invoke(this, whoWon == TicTacToePlayerTurn.X ? TicTacToeWinner.X : TicTacToeWinner.O);
         }
     }
 }
