@@ -32,6 +32,22 @@ namespace SuperTicTacToeTests
             }
         }
 
+        [TestMethod]
+        public void SuperGridTakeTurnTest()
+        {
+            supergrid.Reset();
 
+            supergrid.ClaimCell(0, 0, 0, 0);
+            Assert.AreEqual(TicTacToeCellStatus.X, supergrid.CheckCellStatus(0, 0, 0, 0));
+            Assert.AreEqual(TicTacToePlayerTurn.O, supergrid.WhoseTurn);
+            Assert.AreEqual(0, supergrid.NextMoveX);
+            Assert.AreEqual(0, supergrid.NextMoveY);
+
+            supergrid.ClaimCell(0, 0, 0, 1);
+            Assert.AreEqual(TicTacToeCellStatus.O, supergrid.CheckCellStatus(0, 0, 0, 1));
+            Assert.AreEqual(TicTacToePlayerTurn.X, supergrid.WhoseTurn);
+            Assert.AreEqual(0, supergrid.NextMoveX);
+            Assert.AreEqual(1, supergrid.NextMoveY);
+        }
     }
 }
