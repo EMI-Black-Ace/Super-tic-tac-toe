@@ -85,9 +85,8 @@ namespace Super_tic_tac_toe
             }
 
             //check for diagonal winner
-            if((grid[0][0].Status == grid[1][1].Status && grid[1][1].Status == grid[2][2].Status) ||
-                (grid[0][2].Status == grid[1][1].Status && grid[1][1].Status == grid[2][0].Status) &&
-                grid[1][1].Status != TicTacToeCellStatus.Unclaimed)
+            if((grid[0][0].Status == grid[1][1].Status && grid[1][1].Status == grid[2][2].Status && grid[1][1].Status != TicTacToeCellStatus.Unclaimed) ||
+                (grid[0][2].Status == grid[1][1].Status && grid[1][1].Status == grid[2][0].Status && grid[1][1].Status != TicTacToeCellStatus.Unclaimed))
             {
                 DeclareWinner(player);
                 return;

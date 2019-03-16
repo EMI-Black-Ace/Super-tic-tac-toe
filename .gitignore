@@ -3,3 +3,11 @@
 ################################################################################
 
 /Super-tic-tac-toe/.vs/Super-tic-tac-toe/v15
+*.resources
+*.exe
+*.cache
+*.baml
+/Super-tic-tac-toe/Super-tic-tac-toe/obj/Debug/MainWindow.g.cs
+/Super-tic-tac-toe/Super-tic-tac-toe/bin/Debug/Super-tic-tac-toe.exe.config
+*.pdb
+*.dll

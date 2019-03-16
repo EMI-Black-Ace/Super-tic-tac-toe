@@ -77,10 +77,21 @@ namespace SuperTicTacToeTests
             //O's turn
             supergrid.ClaimCell(0, 1, 0, 0);
             //X
-            supergrid.ClaimCell(0, 0, 0, 2);
+            supergrid.ClaimCell(0, 0, 1, 1);
             //O
-            supergrid.ClaimCell(0, 2, 0, 0);
+            supergrid.ClaimCell(1, 1, 0, 0);
             //X
+            supergrid.ClaimCell(0, 0, 2, 1);
+            //O
+            supergrid.ClaimCell(2, 1, 0, 0);
+
+            //mostrecentgridwonx and y are set by the SubGridWon event; these two lines assert that the event was raised.
+            Assert.AreEqual(0, mostrecentgridwonx);
+            Assert.AreEqual(0, mostrecentgridwony);
+
+            Assert.AreEqual(TicTacToeGridStatus.X, supergrid.CheckGridStatus(0, 0));
+            Assert.AreEqual(-1, supergrid.NextMoveX);
+            Assert.AreEqual(-1, supergrid.NextMoveY);
             
         }
     }

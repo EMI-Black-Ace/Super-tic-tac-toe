@@ -75,7 +75,7 @@ namespace Super_tic_tac_toe
 
         public TicTacToeCellStatus CheckCellStatus(int gridX, int gridY, int X, int Y)
         {
-            throw new NotImplementedException();
+            return subGrids[gridX][gridY].CellStatus(X, Y);
         }
 
         public void ClaimCell(int gridX, int gridY, int X, int Y)
@@ -152,9 +152,10 @@ namespace Super_tic_tac_toe
             }
 
             //check for diagonal winner
-            if ((subGrids[0][0].GridWinner == subGrids[1][1].GridWinner && subGrids[1][1].GridWinner == subGrids[2][2].GridWinner) ||
-                (subGrids[0][2].GridWinner == subGrids[1][1].GridWinner && subGrids[1][1].GridWinner == subGrids[2][0].GridWinner) &&
-                subGrids[1][1].GridWinner != TicTacToeGridStatus.Stalemate)
+            if ((subGrids[0][0].GridWinner == subGrids[1][1].GridWinner && subGrids[1][1].GridWinner == subGrids[2][2].GridWinner && 
+                (subGrids[1][1].GridWinner != TicTacToeGridStatus.Stalemate && subGrids[1][1].GridWinner != TicTacToeGridStatus.Contested)) ||
+                (subGrids[0][2].GridWinner == subGrids[1][1].GridWinner && subGrids[1][1].GridWinner == subGrids[2][0].GridWinner && 
+                (subGrids[1][1].GridWinner != TicTacToeGridStatus.Stalemate && subGrids[1][1].GridWinner != TicTacToeGridStatus.Contested)))
             {
                 DeclareWinner(WhoseTurn);
                 return true;
@@ -196,13 +197,13 @@ namespace Super_tic_tac_toe
         private void DeclareStalemate()
         {
             Winner = TicTacToeWinner.Stalemate;
-            GameWon?.Invoke(this, TicTacToeWinner.Stalemate);
+            GameWon?.Invoke(this, new TicTacToeWinEventArgs(TicTacToeWinner.Stalemate));
         }
 
         private void DeclareWinner(TicTacToePlayerTurn whoWon)
         {
             Winner = whoWon == TicTacToePlayerTurn.X ? TicTacToeWinner.X : TicTacToeWinner.O;
-            GameWon?.Invoke(this, Winner);
+            GameWon?.Invoke(this, new TicTacToeWinEventArgs(Winner));
         }
     }
 }
