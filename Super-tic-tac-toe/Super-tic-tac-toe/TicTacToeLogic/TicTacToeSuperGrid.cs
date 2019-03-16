@@ -10,11 +10,12 @@ namespace Super_tic_tac_toe
     {
         X, O
     }
-    public enum TicTacToeWinner { X, O, Stalemate }
+    public enum TicTacToeWinner { X, O, Stalemate, Contested }
 
     public class TicTacToeSuperGrid
     {
         public TicTacToePlayerTurn WhoseTurn { get; private set; } = TicTacToePlayerTurn.X;
+        public TicTacToeWinner Winner { get; private set; } = TicTacToeWinner.Contested;
 
         private TicTacToeGrid[][] subGrids;
 
@@ -79,6 +80,11 @@ namespace Super_tic_tac_toe
 
         public void ClaimCell(int gridX, int gridY, int X, int Y)
         {
+            if(Winner != TicTacToeWinner.Contested)
+            {
+                throw new TicTacToeException("Cannot claim cell after a winner has been declared");
+            }
+
             TicTacToeCellStatus player = WhoseTurn == TicTacToePlayerTurn.X ? TicTacToeCellStatus.X : TicTacToeCellStatus.O;
             if(NextMoveX == -1 || (gridX == NextMoveX && gridY == NextMoveY))
             {
@@ -108,6 +114,18 @@ namespace Super_tic_tac_toe
             {
                 throw new TicTacToeException("player must make a move in subgrid " + NextMoveX.ToString() + ", " + NextMoveY.ToString() + "!");
             }
+        }
+
+        public void Reset()
+        {
+            foreach(TicTacToeGrid[] row in subGrids)
+            {
+                foreach(TicTacToeGrid grid in row)
+                {
+                    grid.Reset();
+                }
+            }
+            Winner = TicTacToeWinner.Contested;
         }
 
         private bool CheckWinConditions(int gridX, int gridY)
@@ -174,12 +192,14 @@ namespace Super_tic_tac_toe
 
         private void DeclareStalemate()
         {
+            Winner = TicTacToeWinner.Stalemate;
             GameWon?.Invoke(this, TicTacToeWinner.Stalemate);
         }
 
         private void DeclareWinner(TicTacToePlayerTurn whoWon)
         {
-            GameWon?.Invoke(this, whoWon == TicTacToePlayerTurn.X ? TicTacToeWinner.X : TicTacToeWinner.O);
+            Winner = whoWon == TicTacToePlayerTurn.X ? TicTacToeWinner.X : TicTacToeWinner.O;
+            GameWon?.Invoke(this, Winner);
         }
     }
 }

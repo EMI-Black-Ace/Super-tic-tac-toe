@@ -13,8 +13,7 @@ namespace Super_tic_tac_toe
 
     public class TicTacToeCell
     {
-        private TicTacToeCellStatus status = TicTacToeCellStatus.Unclaimed;
-        public TicTacToeCellStatus Status { get { return status; } }
+        public TicTacToeCellStatus Status { get; private set; } = TicTacToeCellStatus.Unclaimed;
 
         public TicTacToeCell()
         {
@@ -23,13 +22,18 @@ namespace Super_tic_tac_toe
 
         public void ClaimCell(TicTacToeCellStatus player)
         {
-            if (status != TicTacToeCellStatus.Unclaimed)
+            if (Status != TicTacToeCellStatus.Unclaimed)
                 throw new TicTacToeException("Cell is already claimed");
 
             if (player == TicTacToeCellStatus.Unclaimed)
                 throw new TicTacToeException("\'Unclaimed\' cannot claim a cell");
 
-            status = player;
+            Status = player;
+        }
+
+        public void Reset()
+        {
+            Status = TicTacToeCellStatus.Unclaimed;
         }
     }
 }

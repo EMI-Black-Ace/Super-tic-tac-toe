@@ -106,6 +106,18 @@ namespace Super_tic_tac_toe
             DeclareWinner(TicTacToeCellStatus.Unclaimed);
         }
 
+        public void Reset()
+        {
+            foreach(TicTacToeCell[] row in grid)
+            {
+                foreach(TicTacToeCell cell in row)
+                {
+                    cell.Reset();
+                }
+            }
+            GridWinner = TicTacToeGridStatus.Contested;
+        }
+
         private void DeclareWinner(TicTacToeCellStatus player)
         {
             if (player == TicTacToeCellStatus.X)

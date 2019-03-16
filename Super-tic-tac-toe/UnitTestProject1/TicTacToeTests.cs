@@ -12,10 +12,14 @@ namespace SuperTicTacToeTests
         public void SuperGridInitTest()
         {
             ttcsg = new TicTacToeSuperGrid();
-            Assert.IsTrue(ttcsg.WhoseTurn == TicTacToePlayerTurn.X);
-            Assert.IsTrue(ttcsg.NextMoveX == -1);
-            Assert.IsTrue(ttcsg.NextMoveY == -1);
+            Assert.AreEqual(TicTacToePlayerTurn.X, ttcsg.WhoseTurn);
+            Assert.AreEqual(-1, ttcsg.NextMoveX);
+            Assert.AreEqual(-1, ttcsg.NextMoveY);
+        }
 
+        [TestMethod]
+        public void SuperGridTakeTurnTest()
+        {
 
         }
     }
