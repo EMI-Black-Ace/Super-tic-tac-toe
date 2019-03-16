@@ -126,6 +126,9 @@ namespace Super_tic_tac_toe
                 }
             }
             Winner = TicTacToeWinner.Contested;
+            NextMoveX = -1;
+            NextMoveY = -1;
+            WhoseTurn = TicTacToePlayerTurn.X;
         }
 
         private bool CheckWinConditions(int gridX, int gridY)
