@@ -82,7 +82,7 @@ namespace SuperTicTacToeTests
             supergrid.ClaimCell(1, 1, 0, 0);
             //X
             supergrid.ClaimCell(0, 0, 2, 1);
-            //O
+            //O, to verify that attempting to force the other player to play in a "won" subgrid lets them pick whatever they want next.
             supergrid.ClaimCell(2, 1, 0, 0);
 
             //mostrecentgridwonx and y are set by the SubGridWon event; these two lines assert that the event was raised.
@@ -92,7 +92,6 @@ namespace SuperTicTacToeTests
             Assert.AreEqual(TicTacToeGridStatus.X, supergrid.CheckGridStatus(0, 0));
             Assert.AreEqual(-1, supergrid.NextMoveX);
             Assert.AreEqual(-1, supergrid.NextMoveY);
-            
         }
     }
 }
