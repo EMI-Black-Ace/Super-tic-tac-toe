@@ -7,6 +7,23 @@ namespace SuperTicTacToeTests
     public class TicTacToeTests
     {
         private TicTacToeSuperGrid supergrid = new TicTacToeSuperGrid();
+        private int mostrecentgridwonx = -1;
+        private int mostrecentgridwony = -1;
+        private TicTacToeWinner whowon = TicTacToeWinner.Contested;
+
+        public TicTacToeTests()
+        {
+            supergrid.GridWon += (u, e) =>
+            {
+                mostrecentgridwonx = e.SubGridX;
+                mostrecentgridwony = e.SubGridY;
+            };
+
+            supergrid.GameWon += (u, e) =>
+            {
+                whowon = e.Winner;
+            };
+        }
 
         [TestMethod]
         public void SuperGridResetTest()
@@ -48,6 +65,23 @@ namespace SuperTicTacToeTests
             Assert.AreEqual(TicTacToePlayerTurn.X, supergrid.WhoseTurn);
             Assert.AreEqual(0, supergrid.NextMoveX);
             Assert.AreEqual(1, supergrid.NextMoveY);
+        }
+
+        [TestMethod]
+        public void SuperGridWinSubgridTest()
+        {
+            supergrid.Reset();
+
+            //X's turn
+            supergrid.ClaimCell(0, 0, 0, 1);
+            //O's turn
+            supergrid.ClaimCell(0, 1, 0, 0);
+            //X
+            supergrid.ClaimCell(0, 0, 0, 2);
+            //O
+            supergrid.ClaimCell(0, 2, 0, 0);
+            //X
+            
         }
     }
 }

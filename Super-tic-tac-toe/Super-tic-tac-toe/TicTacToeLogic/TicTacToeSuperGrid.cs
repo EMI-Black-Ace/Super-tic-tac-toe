@@ -51,7 +51,7 @@ namespace Super_tic_tac_toe
             public TicTacToeWinner Winner { get; private set; }
             public TicTacToeWinEventArgs(TicTacToeWinner vWinner) => Winner = vWinner;
         }
-        public delegate void OverallWinHandler(object sender, TicTacToeWinner winner);
+        public delegate void OverallWinHandler(object sender, TicTacToeWinEventArgs e);
         public event OverallWinHandler GameWon;
 
         private void OnSubgridGridWin(int X, int Y, TicTacToeGridStatus Winner)
