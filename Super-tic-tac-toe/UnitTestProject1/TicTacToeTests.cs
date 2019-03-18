@@ -144,5 +144,20 @@ namespace SuperTicTacToeTests
             //Assert that it's still X's turn -- i.e. that the exception didn't forfeit X's turn
             Assert.AreEqual(TicTacToePlayerTurn.X, supergrid.WhoseTurn);
         }
+
+        [TestMethod]
+        public void SubgridWinDiagonalTest()
+        {
+            supergrid.Reset();
+
+            supergrid.ClaimCell(0, 0, 1, 1);
+            supergrid.ClaimCell(1, 1, 0, 0);
+            supergrid.ClaimCell(0, 0, 2, 2);
+            supergrid.ClaimCell(2, 2, 0, 0);
+            supergrid.ClaimCell(0, 0, 0, 0);
+
+            //assert that the grid was won by X
+            Assert.AreEqual(TicTacToeGridStatus.X, supergrid.CheckGridStatus(0, 0));
+        }
     }
 }
