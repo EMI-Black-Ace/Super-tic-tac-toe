@@ -9,6 +9,7 @@ namespace SuperTicTacToeTests
         private TicTacToeSuperGrid supergrid = new TicTacToeSuperGrid();
         private int mostrecentgridwonx = -1;
         private int mostrecentgridwony = -1;
+        private TicTacToeGridStatus mostrecentsubgridwinner = TicTacToeGridStatus.Contested;
         private TicTacToeWinner whowon = TicTacToeWinner.Contested;
 
         public TicTacToeTests()
@@ -68,7 +69,7 @@ namespace SuperTicTacToeTests
         }
 
         [TestMethod]
-        public void SuperGridWinSubgridVerticalTest()
+        public void SubgridWinVerticalTest()
         {
             supergrid.Reset();
 
@@ -158,6 +159,48 @@ namespace SuperTicTacToeTests
 
             //assert that the grid was won by X
             Assert.AreEqual(TicTacToeGridStatus.X, supergrid.CheckGridStatus(0, 0));
+
+            supergrid.Reset();
+
+            supergrid.ClaimCell(0, 1, 0, 0);
+            supergrid.ClaimCell(0, 0, 2, 0);
+            supergrid.ClaimCell(2, 0, 0, 0);
+            supergrid.ClaimCell(0, 0, 1, 1);
+            supergrid.ClaimCell(1, 1, 0, 0);
+            supergrid.ClaimCell(0, 0, 0, 2);
+
+            Assert.AreEqual(TicTacToeGridStatus.O, supergrid.CheckGridStatus(0, 0));
+        }
+
+        [TestMethod]
+        public void SubgridStalemateTest()
+        {
+            supergrid.Reset();
+
+            //Claim pattern for subgrid 0,0
+            // X O O
+            // X O O
+            // O X X
+
+            supergrid.ClaimCell(0, 0, 0, 0);//X
+            supergrid.ClaimCell(0, 0, 0, 1);//O
+            supergrid.ClaimCell(0, 1, 0, 0);//X
+            supergrid.ClaimCell(0, 0, 0, 2);//O
+            supergrid.ClaimCell(0, 2, 0, 0);//X
+            supergrid.ClaimCell(0, 0, 1, 1);//O
+            supergrid.ClaimCell(1, 1, 0, 0);//X
+            supergrid.ClaimCell(0, 0, 1, 2);//O
+            supergrid.ClaimCell(1, 2, 0, 0);//X
+            supergrid.ClaimCell(0, 0, 2, 0);//O
+            supergrid.ClaimCell(2, 0, 2, 2);//X
+            supergrid.ClaimCell(2, 2, 0, 0);//O
+            supergrid.ClaimCell(0, 0, 1, 0);//X
+            supergrid.ClaimCell(1, 0, 0, 0);//O
+            supergrid.ClaimCell(0, 0, 2, 1);//X
+            supergrid.ClaimCell(2, 1, 0, 0);//O
+            supergrid.ClaimCell(0, 0, 2, 2);//X
+
+            Assert.AreEqual(TicTacToeGridStatus.Stalemate, supergrid.CheckGridStatus(0, 0));
         }
     }
 }
