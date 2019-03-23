@@ -17,7 +17,7 @@ namespace Super_tic_tac_toe
         public TicTacToePlayerTurn WhoseTurn { get; private set; } = TicTacToePlayerTurn.X;
         public TicTacToeWinner Winner { get; private set; } = TicTacToeWinner.Contested;
 
-        private TicTacToeGrid[][] subGrids;
+        private readonly TicTacToeGrid[][] subGrids;
 
         /// <summary>
         /// The X coordinate of the subgrid the player is forced to play in.

@@ -16,17 +16,16 @@ namespace Super_tic_tac_toe
 
     public class TicTacToeGrid
     {
-        private TicTacToeCell[][] grid;
+        private readonly TicTacToeCell[][] grid;
         public TicTacToeGridStatus GridWinner { get; private set; } = TicTacToeGridStatus.Contested;
 
         public class TicTacToeGridEventArgs : EventArgs
         {
-            private TicTacToeGridStatus winner;
-            public TicTacToeGridStatus Winner { get { return winner; } }
+            public TicTacToeGridStatus Winner { get; private set; }
 
             public TicTacToeGridEventArgs(TicTacToeGridStatus vWinner)
             {
-                winner = vWinner;
+                Winner = vWinner;
             }
         }
         public delegate void GridWinHandler(object sender, TicTacToeGridEventArgs e);

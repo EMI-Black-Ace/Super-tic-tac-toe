@@ -13,3 +13,5 @@ C:\Source\Repos\Super-tic-tac-toe\Super-tic-tac-toe\Super-tic-tac-toe\obj\Debug\
 C:\Source\Repos\Super-tic-tac-toe\Super-tic-tac-toe\Super-tic-tac-toe\obj\Debug\Super-tic-tac-toe.csproj.CoreCompileInputs.cache
 C:\Source\Repos\Super-tic-tac-toe\Super-tic-tac-toe\Super-tic-tac-toe\obj\Debug\Super-tic-tac-toe.exe
 C:\Source\Repos\Super-tic-tac-toe\Super-tic-tac-toe\Super-tic-tac-toe\obj\Debug\Super-tic-tac-toe.pdb
+C:\Source\Repos\Super-tic-tac-toe\Super-tic-tac-toe\Super-tic-tac-toe\bin\Debug\Super-tic-tac-toe.exe.CodeAnalysisLog.xml
+C:\Source\Repos\Super-tic-tac-toe\Super-tic-tac-toe\Super-tic-tac-toe\bin\Debug\Super-tic-tac-toe.exe.lastcodeanalysissucceeded
