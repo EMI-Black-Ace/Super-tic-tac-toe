@@ -1,5 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Super_tic_tac_toe;
+using System;
 
 namespace SuperTicTacToeTests
 {
@@ -247,10 +248,53 @@ namespace SuperTicTacToeTests
         {
             supergrid.Reset();
 
-            TicTacToeException ex = Assert.ThrowsException<TicTacToeException>(() =>
+            ArgumentException ex = Assert.ThrowsException<ArgumentException>(() =>
             {
-
+                supergrid.ClaimCell(-1, 0, 0, 0);
             });
+            StringAssert.Contains(ex.Message, "column or row selection invalid:");
+
+            ex = Assert.ThrowsException<ArgumentException>(() =>
+            {
+                supergrid.ClaimCell(3, 0, 0, 0);
+            });
+            StringAssert.Contains(ex.Message, "column or row selection invalid:");
+
+            ex = Assert.ThrowsException<ArgumentException>(() =>
+            {
+                supergrid.ClaimCell(0, -1, 0, 0);
+            });
+            StringAssert.Contains(ex.Message, "column or row selection invalid:");
+
+            ex = Assert.ThrowsException<ArgumentException>(() =>
+            {
+                supergrid.ClaimCell(0, 3, 0, 0);
+            });
+            StringAssert.Contains(ex.Message, "column or row selection invalid:");
+
+            ex = Assert.ThrowsException<ArgumentException>(() =>
+            {
+                supergrid.ClaimCell(0, 0, -1, 0);
+            });
+            StringAssert.Contains(ex.Message, "column or row selection invalid:");
+
+            ex = Assert.ThrowsException<ArgumentException>(() =>
+            {
+                supergrid.ClaimCell(0, 0, 3, 0);
+            });
+            StringAssert.Contains(ex.Message, "column or row selection invalid:");
+
+            ex = Assert.ThrowsException<ArgumentException>(() =>
+            {
+                supergrid.ClaimCell(0, 0, 0, -1);
+            });
+            StringAssert.Contains(ex.Message, "column or row selection invalid:");
+
+            ex = Assert.ThrowsException<ArgumentException>(() =>
+            {
+                supergrid.ClaimCell(0, 0, 0, 3);
+            });
+            StringAssert.Contains(ex.Message, "column or row selection invalid:");
         }
     }
 }

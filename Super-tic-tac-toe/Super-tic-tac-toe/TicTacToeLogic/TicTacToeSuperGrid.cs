@@ -85,6 +85,9 @@ namespace Super_tic_tac_toe
                 throw new TicTacToeException("Cannot claim cell after a winner has been declared");
             }
 
+            if(gridX < 0 || gridX > 2 || gridY < 0 || gridY > 2)
+                throw new ArgumentException("column or row selection invalid: " + gridX + ", " + gridY);
+
             TicTacToeCellStatus player = WhoseTurn == TicTacToePlayerTurn.X ? TicTacToeCellStatus.X : TicTacToeCellStatus.O;
             if(NextMoveX == -1 || (gridX == NextMoveX && gridY == NextMoveY))
             {
