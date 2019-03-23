@@ -1,6 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Super_tic_tac_toe;
 using System;
+using System.Diagnostics;
 
 namespace SuperTicTacToeTests
 {
@@ -97,15 +98,6 @@ namespace SuperTicTacToeTests
             //assert that attempting to force the other player into a "won" subgrid lets them pick whatever they want next.
             Assert.AreEqual(-1, supergrid.NextMoveX);
             Assert.AreEqual(-1, supergrid.NextMoveY);
-
-            //make sure that nobody can claim any cells in the 'won' subgrid
-            TicTacToeException ex = Assert.ThrowsException<TicTacToeException>(() =>
-            {
-                supergrid.ClaimCell(0, 0, 0, 0);
-            });
-
-            //Assert that it's still X's turn -- i.e. that the exception didn't forfeit X's turn
-            Assert.AreEqual(TicTacToePlayerTurn.X, supergrid.WhoseTurn);
         }
 
         [TestMethod]
@@ -295,6 +287,24 @@ namespace SuperTicTacToeTests
                 supergrid.ClaimCell(0, 0, 0, 3);
             });
             StringAssert.Contains(ex.Message, "column or row selection invalid:");
+        }
+
+        [TestMethod]
+        public void AssertCantPlayInWonGrid()
+        {
+            SubgridWinVerticalTest();
+
+            Debug.Assert(supergrid.WhoseTurn == TicTacToePlayerTurn.X, "Recheck SubgridWinVerticalTest -- final state should be X's turn");
+
+            //make sure that nobody can claim any cells in the 'won' subgrid
+            TicTacToeException ex = Assert.ThrowsException<TicTacToeException>(() =>
+            {
+                supergrid.ClaimCell(0, 0, 0, 0);
+            });
+            StringAssert.Contains("Grid is already filled in", ex.Message);
+
+            //Assert that it's still X's turn -- i.e. that the exception didn't forfeit X's turn
+            Assert.AreEqual(TicTacToePlayerTurn.X, supergrid.WhoseTurn);
         }
     }
 }
