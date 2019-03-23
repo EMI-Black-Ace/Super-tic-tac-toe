@@ -178,29 +178,79 @@ namespace SuperTicTacToeTests
             supergrid.Reset();
 
             //Claim pattern for subgrid 0,0
-            // X O O
+            // X O X
             // X O O
             // O X X
 
             supergrid.ClaimCell(0, 0, 0, 0);//X
-            supergrid.ClaimCell(0, 0, 0, 1);//O
-            supergrid.ClaimCell(0, 1, 0, 0);//X
-            supergrid.ClaimCell(0, 0, 0, 2);//O
-            supergrid.ClaimCell(0, 2, 0, 0);//X
+            //X--
+            //---
+            //---
+            supergrid.ClaimCell(0, 0, 1, 0);//O
+            //XO-
+            //---
+            //---
+            supergrid.ClaimCell(1, 0, 0, 0);//X         //Can't use 1,0 to return anymore
             supergrid.ClaimCell(0, 0, 1, 1);//O
-            supergrid.ClaimCell(1, 1, 0, 0);//X
-            supergrid.ClaimCell(0, 0, 1, 2);//O
-            supergrid.ClaimCell(1, 2, 0, 0);//X
-            supergrid.ClaimCell(0, 0, 2, 0);//O
-            supergrid.ClaimCell(2, 0, 2, 2);//X
-            supergrid.ClaimCell(2, 2, 0, 0);//O
-            supergrid.ClaimCell(0, 0, 1, 0);//X
-            supergrid.ClaimCell(1, 0, 0, 0);//O
-            supergrid.ClaimCell(0, 0, 2, 1);//X
-            supergrid.ClaimCell(2, 1, 0, 0);//O
+            //XO-
+            //-O-
+            //---
+            supergrid.ClaimCell(1, 1, 0, 0);//X         //can't use 1,1 to return anymore
+            supergrid.ClaimCell(0, 0, 2, 1);//O
+            //XO-
+            //-OO
+            //---
+            supergrid.ClaimCell(2, 1, 0, 0);//X         //can't use 2,1 to return anymore
+            supergrid.ClaimCell(0, 0, 0, 2);//O
+            //XO-
+            //-OO
+            //O--
+            supergrid.ClaimCell(0, 2, 0, 2);//X
+            supergrid.ClaimCell(0, 2, 0, 0);//O         //can't use 0,2 to return anymore
+            supergrid.ClaimCell(0, 0, 0, 1);//X
+            //XO-
+            //XOO
+            //O--
+            supergrid.ClaimCell(0, 1, 0, 0);//O         //can't use 0,1 to return anymore
+            supergrid.ClaimCell(0, 0, 1, 2);//X
+            //XO-
+            //XOO
+            //OX-
+            supergrid.ClaimCell(1, 2, 0, 0);//O         //can't use 1,2 to return anymore
             supergrid.ClaimCell(0, 0, 2, 2);//X
+            //XO-
+            //XOO
+            //OXX
+            supergrid.ClaimCell(2, 2, 0, 0);//O
+            supergrid.ClaimCell(0, 0, 2, 0);//X
 
             Assert.AreEqual(TicTacToeGridStatus.Stalemate, supergrid.CheckGridStatus(0, 0));
+        }
+
+        [TestMethod]
+        public void SubgridCantClaimClaimedCellTest()
+        {
+            supergrid.Reset();
+
+            supergrid.ClaimCell(0, 0, 0, 0);
+
+            TicTacToeException ex = Assert.ThrowsException<TicTacToeException>(() =>
+            {
+                supergrid.ClaimCell(0, 0, 0, 0);
+            });
+
+            Assert.AreEqual("Cell is already claimed", ex.Message);
+        }
+
+        [TestMethod]
+        public void AssertValidClaimCellInputs()
+        {
+            supergrid.Reset();
+
+            TicTacToeException ex = Assert.ThrowsException<TicTacToeException>(() =>
+            {
+
+            });
         }
     }
 }
