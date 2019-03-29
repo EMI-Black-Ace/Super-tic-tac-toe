@@ -16,7 +16,7 @@ namespace Super_tic_tac_toe
 
     public class TicTacToeGrid
     {
-        private readonly TicTacToeCell[][] grid;
+        private readonly TicTacToeCell[,] grid;
         public TicTacToeGridStatus GridWinner { get; private set; } = TicTacToeGridStatus.Contested;
 
         public class TicTacToeGridEventArgs : EventArgs
@@ -38,10 +38,10 @@ namespace Super_tic_tac_toe
         
         public TicTacToeGrid()
         {
-            grid = new TicTacToeCell[][]{
-                                            new TicTacToeCell[]{ new TicTacToeCell(), new TicTacToeCell(), new TicTacToeCell() },
-                                            new TicTacToeCell[]{ new TicTacToeCell(), new TicTacToeCell(), new TicTacToeCell() },
-                                            new TicTacToeCell[]{ new TicTacToeCell(), new TicTacToeCell(), new TicTacToeCell() }
+            grid = new TicTacToeCell[,]{
+                                            { new TicTacToeCell(), new TicTacToeCell(), new TicTacToeCell() },
+                                            { new TicTacToeCell(), new TicTacToeCell(), new TicTacToeCell() },
+                                            { new TicTacToeCell(), new TicTacToeCell(), new TicTacToeCell() }
                                          };
         }
 
@@ -53,7 +53,7 @@ namespace Super_tic_tac_toe
             if (X < 0 || X > 2 || Y < 0 || Y > 2)
                 throw new ArgumentException("column or row selection invalid: " + X + ", " + Y);
 
-            grid[X][Y].ClaimCell(player);
+            grid[X,Y].ClaimCell(player);
             CheckWinner(X, Y, player);
         }
 
@@ -62,30 +62,30 @@ namespace Super_tic_tac_toe
             if (column < 0 || column > 2 || row < 0 || row > 2)
                 throw new ArgumentException("column or row selection invalid: " + column + ", " + row);
 
-            return grid[column][row].Status;
+            return grid[column,row].Status;
         }
 
         private void CheckWinner(int column, int row, TicTacToeCellStatus player)
         {
             //check for horizontal winner
-            if(grid[0][row].Status == grid[1][row].Status &&
-                grid[1][row].Status == grid[2][row].Status)
+            if(grid[0,row].Status == grid[1,row].Status &&
+                grid[1,row].Status == grid[2,row].Status)
             {
                 DeclareWinner(player);
                 return;
             }
 
             //check for vertical winner
-            if (grid[column][0].Status == grid[column][1].Status &&
-                grid[column][1].Status == grid[column][2].Status)
+            if (grid[column,0].Status == grid[column,1].Status &&
+                grid[column,1].Status == grid[column,2].Status)
             {
                 DeclareWinner(player);
                 return;
             }
 
             //check for diagonal winner
-            if((grid[0][0].Status == grid[1][1].Status && grid[1][1].Status == grid[2][2].Status && grid[1][1].Status != TicTacToeCellStatus.Unclaimed) ||
-                (grid[0][2].Status == grid[1][1].Status && grid[1][1].Status == grid[2][0].Status && grid[1][1].Status != TicTacToeCellStatus.Unclaimed))
+            if((grid[0,0].Status == grid[1,1].Status && grid[1,1].Status == grid[2,2].Status && grid[1,1].Status != TicTacToeCellStatus.Unclaimed) ||
+                (grid[0,2].Status == grid[1,1].Status && grid[1,1].Status == grid[2,0].Status && grid[1,1].Status != TicTacToeCellStatus.Unclaimed))
             {
                 DeclareWinner(player);
                 return;
@@ -95,7 +95,7 @@ namespace Super_tic_tac_toe
             {
                 for(int j = 0; j < 3; ++j)
                 {
-                    if (grid[i][j].Status == TicTacToeCellStatus.Unclaimed)
+                    if (grid[i,j].Status == TicTacToeCellStatus.Unclaimed)
                     {
                         return;
                     }
@@ -106,12 +106,9 @@ namespace Super_tic_tac_toe
 
         public void Reset()
         {
-            foreach(TicTacToeCell[] row in grid)
+            foreach(TicTacToeCell cell in grid)
             {
-                foreach(TicTacToeCell cell in row)
-                {
-                    cell.Reset();
-                }
+                cell.Reset();
             }
             GridWinner = TicTacToeGridStatus.Contested;
         }
