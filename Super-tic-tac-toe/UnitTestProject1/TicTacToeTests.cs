@@ -85,8 +85,6 @@ namespace SuperTicTacToeTests
             supergrid.ClaimCell(1, 1, 0, 0);
             //X
             supergrid.ClaimCell(0, 0, 2, 1);
-            //O, to verify that attempting to force the other player to play in a "won" subgrid lets them pick whatever they want next.
-            supergrid.ClaimCell(2, 1, 0, 0);
 
             //mostrecentgridwonx and y are set by the SubGridWon event; these two lines assert that the event was raised.
             Assert.AreEqual(0, mostrecentgridwonx);
@@ -94,10 +92,6 @@ namespace SuperTicTacToeTests
 
             //assert that the grid was won by X
             Assert.AreEqual(TicTacToeGridStatus.X, supergrid.CheckGridStatus(0, 0));
-
-            //assert that attempting to force the other player into a "won" subgrid lets them pick whatever they want next.
-            Assert.AreEqual(-1, supergrid.NextMoveX);
-            Assert.AreEqual(-1, supergrid.NextMoveY);
         }
 
         [TestMethod]
@@ -125,7 +119,7 @@ namespace SuperTicTacToeTests
         }
 
         [TestMethod]
-        public void PointingToWinSubgridAllowsOpenChoice()
+        public void PointingToWonSubgridAllowsOpenChoice()
         {
             SubgridWinVerticalTest();
 
@@ -293,7 +287,12 @@ namespace SuperTicTacToeTests
             SubgridWinVerticalTest();
 
             Debug.Assert(supergrid.CheckGridStatus(0,0) != TicTacToeGridStatus.Contested, "recheck SubgridWinVerticalTest -- subgrid 0,0 should have been won");
-            Debug.Assert(supergrid.WhoseTurn == TicTacToePlayerTurn.X, "recheck SubgridWinVerticalTest -- should be X's turn");
+            Debug.Assert(supergrid.NextMoveX != -1, "recheck SubgridWinVerticalTest -- last move should not point at a won subgrid");
+
+            //
+            supergrid.ClaimCell(supergrid.NextMoveX, supergrid.NextMoveY, 0, 0);
+
+            TicTacToePlayerTurn whoseTurnBeforeClaimCellFailure = supergrid.WhoseTurn;
 
             //make sure that nobody can claim any cells in the 'won' subgrid
             TicTacToeException ex = Assert.ThrowsException<TicTacToeException>(() =>
@@ -303,7 +302,7 @@ namespace SuperTicTacToeTests
             StringAssert.Contains("Grid is already filled in", ex.Message);
 
             //Assert that it's still X's turn -- i.e. that the exception didn't forfeit X's turn
-            Assert.AreEqual(TicTacToePlayerTurn.X, supergrid.WhoseTurn);
+            Assert.AreEqual(whoseTurnBeforeClaimCellFailure, supergrid.WhoseTurn);
         }
     }
 }

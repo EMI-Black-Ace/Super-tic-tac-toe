@@ -7,7 +7,9 @@
 *.exe
 *.cache
 *.baml
-/Super-tic-tac-toe/Super-tic-tac-toe/obj/Debug/MainWindow.g.cs
-/Super-tic-tac-toe/Super-tic-tac-toe/bin/Debug/Super-tic-tac-toe.exe.config
+/Super-tic-tac-toe/Super-tic-tac-toe/obj/
+/Super-tic-tac-toe/Super-tic-tac-toe/bin/
+/Super-tic-tac-toe/UnitTestProject1/bin/
+/Super-tic-tac-toe/UnitTestProject1/obj/
 *.pdb
 *.dll
