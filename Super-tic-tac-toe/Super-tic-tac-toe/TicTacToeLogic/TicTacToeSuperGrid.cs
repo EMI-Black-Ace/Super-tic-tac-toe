@@ -31,6 +31,9 @@ namespace Super_tic_tac_toe
         public int NextMoveY { get; private set; } = -1;
 
         #region Subgrid win event handling
+        /// <summary>
+        /// Event arguments indicating a subgrid winner and the won subgrid
+        /// </summary>
         public class TicTacToeSuperGridEventArgs : EventArgs
         {
             public TicTacToeGridStatus Winner { get; private set; }
@@ -45,16 +48,27 @@ namespace Super_tic_tac_toe
             }
         }
         public delegate void SubGridWinHandler(object sender, TicTacToeSuperGridEventArgs e);
+
+        /// <summary>
+        /// Event raised when a subgrid is won
+        /// </summary>
         public event SubGridWinHandler GridWon;
         #endregion
 
         #region Supergrid win event handling
+        /// <summary>
+        /// EventArgs indicating the game winner
+        /// </summary>
         public class TicTacToeWinEventArgs : EventArgs
         {
             public TicTacToeWinner Winner { get; private set; }
             public TicTacToeWinEventArgs(TicTacToeWinner vWinner) => Winner = vWinner;
         }
         public delegate void OverallWinHandler(object sender, TicTacToeWinEventArgs e);
+
+        /// <summary>
+        /// The event raised when the game is won
+        /// </summary>
         public event OverallWinHandler GameWon;
 
         private void OnSubgridGridWin(int X, int Y, TicTacToeGridStatus Winner)
@@ -64,6 +78,9 @@ namespace Super_tic_tac_toe
         #endregion
 
         #region Turn event handling
+        /// <summary>
+        /// Event arguments indicating whose turn is next and which subgrid they must play in, as well as the position of the last move made
+        /// </summary>
         public class TicTacToeTurnEventArgs : EventArgs
         {
             public TicTacToePlayerTurn WhoseTurn { get; private set; }
@@ -145,14 +162,14 @@ namespace Super_tic_tac_toe
                     NextMoveX = -1;
                     NextMoveY = -1;
                 }
+
+                OnMove(gridX, gridY, X, Y);
                 WhoseTurn = WhoseTurn == TicTacToePlayerTurn.X ? TicTacToePlayerTurn.O : TicTacToePlayerTurn.X;
             }
             else
             {
                 throw new TicTacToeException("player must make a move in subgrid " + NextMoveX.ToString() + ", " + NextMoveY.ToString() + "!");
             }
-
-            OnMove(gridX, gridY, X, Y);
         }
 
         public void Reset()
