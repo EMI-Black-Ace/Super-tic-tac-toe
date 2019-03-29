@@ -8,8 +8,7 @@
 *.cache
 *.baml
 /Super-tic-tac-toe/Super-tic-tac-toe/obj/
-/Super-tic-tac-toe/Super-tic-tac-toe/bin/
 /Super-tic-tac-toe/UnitTestProject1/bin/
-/Super-tic-tac-toe/UnitTestProject1/obj/
 *.pdb
 *.dll
+*.config

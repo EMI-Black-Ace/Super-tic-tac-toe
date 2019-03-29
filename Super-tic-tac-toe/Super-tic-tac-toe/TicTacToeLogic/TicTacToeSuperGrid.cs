@@ -12,7 +12,7 @@ namespace Super_tic_tac_toe
     }
     public enum TicTacToeWinner { X, O, Stalemate, Contested }
 
-    public class TicTacToeSuperGrid
+    public class TicTacToeSuperGrid : ITicTacToeSuperGrid
     {
         public TicTacToePlayerTurn WhoseTurn { get; private set; } = TicTacToePlayerTurn.X;
         public TicTacToeWinner Winner { get; private set; } = TicTacToeWinner.Contested;
@@ -31,77 +31,37 @@ namespace Super_tic_tac_toe
         public int NextMoveY { get; private set; } = -1;
 
         #region Subgrid win event handling
-        /// <summary>
-        /// Event arguments indicating a subgrid winner and the won subgrid
-        /// </summary>
-        public class TicTacToeSuperGridEventArgs : EventArgs
-        {
-            public TicTacToeGridStatus Winner { get; private set; }
-            public int SubGridX { get; private set; }
-            public int SubGridY { get; private set; }
-
-            public TicTacToeSuperGridEventArgs(int X, int Y, TicTacToeGridStatus vWinner)
-            {
-                SubGridX = X;
-                SubGridY = Y;
-                Winner = vWinner;
-            }
-        }
-        public delegate void SubGridWinHandler(object sender, TicTacToeSuperGridEventArgs e);
-
+        
         /// <summary>
         /// Event raised when a subgrid is won
         /// </summary>
         public event SubGridWinHandler GridWon;
+        private void OnSubgridGridWin(int X, int Y, TicTacToeGridStatus Winner)
+        {
+            GridWon?.Invoke(this, new TicTacToeSubgridWinEventArgs(X, Y, Winner));
+        }
         #endregion
 
         #region Supergrid win event handling
         /// <summary>
-        /// EventArgs indicating the game winner
-        /// </summary>
-        public class TicTacToeWinEventArgs : EventArgs
-        {
-            public TicTacToeWinner Winner { get; private set; }
-            public TicTacToeWinEventArgs(TicTacToeWinner vWinner) => Winner = vWinner;
-        }
-        public delegate void OverallWinHandler(object sender, TicTacToeWinEventArgs e);
-
-        /// <summary>
         /// The event raised when the game is won
         /// </summary>
         public event OverallWinHandler GameWon;
-
-        private void OnSubgridGridWin(int X, int Y, TicTacToeGridStatus Winner)
+        private void DeclareStalemate()
         {
-            GridWon?.Invoke(this, new TicTacToeSuperGridEventArgs(X, Y, Winner));
+            Winner = TicTacToeWinner.Stalemate;
+            GameWon?.Invoke(this, new TicTacToeWinEventArgs(TicTacToeWinner.Stalemate));
+        }
+
+        private void DeclareWinner(TicTacToePlayerTurn whoWon)
+        {
+            Winner = whoWon == TicTacToePlayerTurn.X ? TicTacToeWinner.X : TicTacToeWinner.O;
+            GameWon?.Invoke(this, new TicTacToeWinEventArgs(Winner));
         }
         #endregion
 
         #region Turn event handling
-        /// <summary>
-        /// Event arguments indicating whose turn is next and which subgrid they must play in, as well as the position of the last move made
-        /// </summary>
-        public class TicTacToeTurnEventArgs : EventArgs
-        {
-            public TicTacToePlayerTurn WhoseTurn { get; private set; }
-            public int NextMoveX { get; private set; }
-            public int NextMoveY { get; private set; }
-            public int MoveXGrid { get; private set; }
-            public int MoveYGrid { get; private set; }
-            public int MoveX { get; private set; }
-            public int MoveY { get; private set; }
-            public TicTacToeTurnEventArgs(TicTacToePlayerTurn whoseTurn, int nextMoveX, int nextMoveY, int moveXGrid, int moveYGrid, int moveX, int moveY)
-            {
-                WhoseTurn = whoseTurn;
-                NextMoveX = nextMoveX;
-                NextMoveY = nextMoveY;
-                MoveXGrid = moveXGrid;
-                MoveYGrid = moveYGrid;
-                MoveX = moveX;
-                MoveY = moveY;
-            }
-        }
-        public delegate void MoveHandler(object sender, TicTacToeTurnEventArgs e);
+        
         public event MoveHandler MoveMade;
 
         private void OnMove(int gridX, int gridY, int X, int Y)
@@ -245,18 +205,6 @@ namespace Super_tic_tac_toe
             else
                 DeclareStalemate();
             return false;
-        }
-
-        private void DeclareStalemate()
-        {
-            Winner = TicTacToeWinner.Stalemate;
-            GameWon?.Invoke(this, new TicTacToeWinEventArgs(TicTacToeWinner.Stalemate));
-        }
-
-        private void DeclareWinner(TicTacToePlayerTurn whoWon)
-        {
-            Winner = whoWon == TicTacToePlayerTurn.X ? TicTacToeWinner.X : TicTacToeWinner.O;
-            GameWon?.Invoke(this, new TicTacToeWinEventArgs(Winner));
         }
     }
 }
