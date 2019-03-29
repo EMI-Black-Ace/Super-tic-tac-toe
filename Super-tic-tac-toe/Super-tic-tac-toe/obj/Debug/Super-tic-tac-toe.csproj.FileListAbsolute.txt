@@ -1,0 +1,15 @@
+C:\Source\Repos\Super-tic-tac-toe\Super-tic-tac-toe\Super-tic-tac-toe\obj\Debug\Super-tic-tac-toe.csprojAssemblyReference.cache
+C:\Source\Repos\Super-tic-tac-toe\Super-tic-tac-toe\Super-tic-tac-toe\obj\Debug\MainWindow.g.cs
+C:\Source\Repos\Super-tic-tac-toe\Super-tic-tac-toe\Super-tic-tac-toe\obj\Debug\App.g.cs
+C:\Source\Repos\Super-tic-tac-toe\Super-tic-tac-toe\Super-tic-tac-toe\obj\Debug\Super-tic-tac-toe_MarkupCompile.cache
+C:\Source\Repos\Super-tic-tac-toe\Super-tic-tac-toe\Super-tic-tac-toe\obj\Debug\Super-tic-tac-toe_MarkupCompile.lref
+C:\Source\Repos\Super-tic-tac-toe\Super-tic-tac-toe\Super-tic-tac-toe\bin\Debug\Super-tic-tac-toe.exe.config
+C:\Source\Repos\Super-tic-tac-toe\Super-tic-tac-toe\Super-tic-tac-toe\bin\Debug\Super-tic-tac-toe.exe
+C:\Source\Repos\Super-tic-tac-toe\Super-tic-tac-toe\Super-tic-tac-toe\bin\Debug\Super-tic-tac-toe.pdb
+C:\Source\Repos\Super-tic-tac-toe\Super-tic-tac-toe\Super-tic-tac-toe\obj\Debug\MainWindow.baml
+C:\Source\Repos\Super-tic-tac-toe\Super-tic-tac-toe\Super-tic-tac-toe\obj\Debug\Super-tic-tac-toe.g.resources
+C:\Source\Repos\Super-tic-tac-toe\Super-tic-tac-toe\Super-tic-tac-toe\obj\Debug\Super_tic_tac_toe.Properties.Resources.resources
+C:\Source\Repos\Super-tic-tac-toe\Super-tic-tac-toe\Super-tic-tac-toe\obj\Debug\Super-tic-tac-toe.csproj.GenerateResource.cache
+C:\Source\Repos\Super-tic-tac-toe\Super-tic-tac-toe\Super-tic-tac-toe\obj\Debug\Super-tic-tac-toe.csproj.CoreCompileInputs.cache
+C:\Source\Repos\Super-tic-tac-toe\Super-tic-tac-toe\Super-tic-tac-toe\obj\Debug\Super-tic-tac-toe.exe
+C:\Source\Repos\Super-tic-tac-toe\Super-tic-tac-toe\Super-tic-tac-toe\obj\Debug\Super-tic-tac-toe.pdb
