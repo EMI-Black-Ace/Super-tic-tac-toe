@@ -294,7 +294,8 @@ namespace SuperTicTacToeTests
         {
             SubgridWinVerticalTest();
 
-            Debug.Assert(supergrid.WhoseTurn == TicTacToePlayerTurn.X, "Recheck SubgridWinVerticalTest -- final state should be X's turn");
+            Debug.Assert(supergrid.CheckGridStatus(0,0) != TicTacToeGridStatus.Contested, "recheck SubgridWinVerticalTest -- subgrid 0,0 should have been won");
+            Debug.Assert(supergrid.WhoseTurn == TicTacToePlayerTurn.X, "recheck SubgridWinVerticalTest -- should be X's turn");
 
             //make sure that nobody can claim any cells in the 'won' subgrid
             TicTacToeException ex = Assert.ThrowsException<TicTacToeException>(() =>
