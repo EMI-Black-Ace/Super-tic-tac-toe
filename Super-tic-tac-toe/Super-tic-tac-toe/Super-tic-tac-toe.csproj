@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModels\ObservableObject.cs" />
+    <Compile Include="ViewModels\RelayCommand.cs" />
+    <Compile Include="ViewModels\TicTacToeSuperGridViewModel.cs" />
     <Compile Include="Views\TicTacToeSuperGridView.xaml.cs">
       <DependentUpon>TicTacToeSuperGridView.xaml</DependentUpon>
     </Compile>
