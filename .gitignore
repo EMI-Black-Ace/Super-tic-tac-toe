@@ -12,3 +12,5 @@
 *.pdb
 *.dll
 *.config
+/.vs
+/Super-tic-tac-toe/UnitTestProject1/obj
