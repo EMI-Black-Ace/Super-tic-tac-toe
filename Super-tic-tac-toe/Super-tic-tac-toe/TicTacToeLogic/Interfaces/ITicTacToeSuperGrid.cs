@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Super_tic_tac_toe
 {
-    interface ITicTacToeSuperGrid
+    public interface ITicTacToeSuperGrid
     {
         event OverallWinHandler GameWon;
         event SubGridWinHandler GridWon;

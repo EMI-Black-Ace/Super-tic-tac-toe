@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace Super_tic_tac_toe.ViewModels
 {
@@ -12,6 +15,26 @@ namespace Super_tic_tac_toe.ViewModels
         private ITicTacToeSuperGrid superGrid;
 
         public ImageSource[,,,] imageGrid;
+
+        public TicTacToeSuperGridViewModel(ITicTacToeSuperGrid SuperGrid)
+        {
+            superGrid = SuperGrid;
+            superGrid.MoveMade += SuperGrid_MoveMade;
+        }
+
+        private void SuperGrid_MoveMade(object sender, TicTacToeTurnEventArgs e)
+        {
+            string propertyName = "ImgSrc" + e.MoveXGrid.ToString()
+                + e.MoveYGrid.ToString()
+                + e.MoveX.ToString()
+                + e.MoveY.ToString();
+            string imageFilePath = @"/./Resources/" + (e.WhoseTurn == TicTacToePlayerTurn.X ? "O_img.bmp" : "X_img.bmp");
+            BitmapImage targetImage = new BitmapImage(new Uri(imageFilePath));
+            PropertyInfo property = GetType().GetProperty(propertyName);
+            property.SetValue(this, targetImage);
+        }
+
+        #region Image Grid Properties
 
         public ImageSource ImgSrc0000 { get => imageGrid[0, 0, 0, 0]; set { imageGrid[0, 0, 0, 0] = value; OnPropertyChanged("ImgSrc0000"); } }
         public ImageSource ImgSrc1000 { get => imageGrid[0, 0, 1, 0]; set { imageGrid[0, 0, 1, 0] = value; OnPropertyChanged("ImgSrc1000"); } }
@@ -102,5 +125,23 @@ namespace Super_tic_tac_toe.ViewModels
         public ImageSource ImgSrc0222 { get => imageGrid[2, 2, 0, 2]; set { imageGrid[2, 2, 0, 2] = value; OnPropertyChanged("ImgSrc0222"); } }
         public ImageSource ImgSrc1222 { get => imageGrid[2, 2, 1, 2]; set { imageGrid[2, 2, 1, 2] = value; OnPropertyChanged("ImgSrc1222"); } }
         public ImageSource ImgSrc2222 { get => imageGrid[2, 2, 2, 2]; set { imageGrid[2, 2, 2, 2] = value; OnPropertyChanged("ImgSrc2222"); } }
+
+        #endregion
+
+        public ICommand ButtonClick { get; set; }
+
+        private void OnButtonClick(int[] GridLocation)
+        {
+            try
+            {
+                superGrid.ClaimCell(GridLocation[0], GridLocation[1], GridLocation[2], GridLocation[3]);
+            }
+            catch (TicTacToeException)
+            {
+                //do nothing
+            }
+        }
+
+        
     }
 }
