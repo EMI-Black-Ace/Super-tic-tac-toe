@@ -26,12 +26,18 @@ namespace SuperTicTacToeTests
             TicTacToeCellStatus status = TicTacToeCellStatus.Unclaimed;
             TicTacToePlayerTurn whoseturn = TicTacToePlayerTurn.X;
             ttcsg.Setup(m => m.CheckCellStatus(0, 0, 0, 0)).Returns(() => status);
-            ttcsg.Setup(m => m.ClaimCell(0, 0, 0, 0)).Raises(m => m.MoveMade += null, new TicTacToeTurnEventArgs(whoseturn, 0,0,0,0,0,0));
+            ttcsg.Setup(m => m.ClaimCell(0, 0, 0, 0)).Raises(m => m.MoveMade += null, new TicTacToeTurnEventArgs(whoseturn, 0, 0, 0, 0, 0, 0));
             ttcsg.Setup(m => m.ClaimCell(0, 0, 0, 0)).Callback(() =>
             {
                 status = TicTacToeCellStatus.X;
                 whoseturn = TicTacToePlayerTurn.O;
             });
+
+            vm = new TicTacToeSuperGridViewModel(ttcsg.Object);
+
+            vm.ButtonClick.Execute(new int[] { 0, 0, 0, 0 });
+
+            StringAssert.EndsWith(vm.ImgSrc0000)
         }
     }
 }
