@@ -14,7 +14,7 @@ namespace Super_tic_tac_toe.ViewModels
     {
         private ITicTacToeSuperGrid superGrid;
 
-        public ImageSource[,,,] imageGrid;
+        public ImageSource[,,,] imageGrid = new ImageSource[3, 3, 3, 3];
 
         public TicTacToeSuperGridViewModel(ITicTacToeSuperGrid SuperGrid)
         {
@@ -29,8 +29,11 @@ namespace Super_tic_tac_toe.ViewModels
                 + e.MoveYGrid.ToString()
                 + e.MoveX.ToString()
                 + e.MoveY.ToString();
-            string imageFilePath = @"/./Resources/" + (e.WhoseTurn == TicTacToePlayerTurn.X ? "O_img.bmp" : "X_img.bmp");
-            BitmapImage targetImage = new BitmapImage(new Uri(imageFilePath));
+            string imageFilePath = @"/./Resources/" + (e.WhoseTurn == TicTacToePlayerTurn.X ? "X_img.bmp" : "O_img.bmp");
+            BitmapImage targetImage = new BitmapImage();
+            targetImage.BeginInit();
+            targetImage.UriSource = new Uri(imageFilePath, UriKind.Relative);
+            targetImage.EndInit();
             PropertyInfo property = GetType().GetProperty(propertyName);
             property.SetValue(this, targetImage);
         }

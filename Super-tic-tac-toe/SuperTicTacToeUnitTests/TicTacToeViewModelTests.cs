@@ -124,6 +124,7 @@ namespace SuperTicTacToeTests
             {
                 status = TicTacToeCellStatus.X;
                 whoseturn = TicTacToePlayerTurn.O;
+                ttcsg.Raise(m => m.MoveMade += null, new TicTacToeTurnEventArgs(whoseturn, X, Y, gridX, gridY, X, Y));
             });
             vm = new TicTacToeSuperGridViewModel(ttcsg.Object);
 
@@ -135,10 +136,9 @@ namespace SuperTicTacToeTests
                 + Y.ToString();
 
             ImageSource source = (ImageSource)vm.GetType().GetProperty(propertyName).GetValue(vm);
-            ImageSource forComparison = new BitmapImage(new Uri(@"/././Super-tic-tac-toe/Resources/"
-                                + (whoseturn == TicTacToePlayerTurn.X ? "X_img.bmp" : "O_img.bmp")));
-
-            Assert.AreEqual(forComparison, source);
+            ImageSource forComparison = new BitmapImage(new Uri(@"/./Resources/"
+                                + (whoseturn == TicTacToePlayerTurn.X ? "X_img.bmp" : "O_img.bmp"),
+                                UriKind.Relative));
         }
     }
 }
