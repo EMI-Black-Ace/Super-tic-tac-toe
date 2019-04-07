@@ -20,6 +20,7 @@ namespace Super_tic_tac_toe.ViewModels
         {
             superGrid = SuperGrid;
             superGrid.MoveMade += SuperGrid_MoveMade;
+            ButtonClick = new RelayCommand((x) => OnButtonClick(x as int[]));
         }
 
         private void SuperGrid_MoveMade(object sender, TicTacToeTurnEventArgs e)
@@ -128,6 +129,9 @@ namespace Super_tic_tac_toe.ViewModels
 
         #endregion
 
+        /// <summary>
+        /// Command bound to button clicks.  Must pass in int[] parameter.
+        /// </summary>
         public ICommand ButtonClick { get; set; }
 
         private void OnButtonClick(int[] GridLocation)
