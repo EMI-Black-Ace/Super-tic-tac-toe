@@ -6,6 +6,8 @@ using Super_tic_tac_toe.ViewModels;
 using Super_tic_tac_toe;
 using Moq;
 using System.Reflection;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace SuperTicTacToeTests
 {
@@ -131,6 +133,12 @@ namespace SuperTicTacToeTests
                 + gridY.ToString()
                 + X.ToString()
                 + Y.ToString();
+
+            ImageSource source = (ImageSource)vm.GetType().GetProperty(propertyName).GetValue(vm);
+            ImageSource forComparison = new BitmapImage(new Uri(@"/././Super-tic-tac-toe/Resources/"
+                                + (whoseturn == TicTacToePlayerTurn.X ? "X_img.bmp" : "O_img.bmp")));
+
+            Assert.AreEqual(forComparison, source);
         }
     }
 }
