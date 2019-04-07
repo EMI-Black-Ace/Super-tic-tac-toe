@@ -35,7 +35,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject />
+    <StartupObject>Super_tic_tac_toe.App</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
