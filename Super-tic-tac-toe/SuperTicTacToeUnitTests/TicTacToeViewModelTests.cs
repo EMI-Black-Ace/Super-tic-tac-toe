@@ -128,17 +128,131 @@ namespace SuperTicTacToeTests
             });
             vm = new TicTacToeSuperGridViewModel(ttcsg.Object);
 
+            string propertyName = "ImgSrc" + gridX.ToString()
+                + gridY.ToString()
+                + X.ToString()
+                + Y.ToString();
+
+            Assert.IsNull((ImageSource)vm.GetType().GetProperty(propertyName).GetValue(vm));
+
             vm.ButtonClick.Execute(new int[] { gridX, gridY, X, Y });
+
+            Assert.IsNotNull((ImageSource)vm.GetType().GetProperty(propertyName).GetValue(vm));
+        }
+
+        #region Data rows
+        [DataRow(TicTacToePlayerTurn.X, 0, 0, 0, 0)]
+        [DataRow(TicTacToePlayerTurn.O, 0, 0, 0, 1)]
+        [DataRow(TicTacToePlayerTurn.X, 0, 0, 0, 2)]
+        [DataRow(TicTacToePlayerTurn.O, 0, 0, 1, 0)]
+        [DataRow(TicTacToePlayerTurn.X, 0, 0, 1, 1)]
+        [DataRow(TicTacToePlayerTurn.O, 0, 0, 1, 2)]
+        [DataRow(TicTacToePlayerTurn.X, 0, 0, 2, 0)]
+        [DataRow(TicTacToePlayerTurn.O, 0, 0, 2, 1)]
+        [DataRow(TicTacToePlayerTurn.X, 0, 0, 2, 2)]
+
+        [DataRow(TicTacToePlayerTurn.X, 0, 1, 0, 0)]
+        [DataRow(TicTacToePlayerTurn.O, 0, 1, 0, 1)]
+        [DataRow(TicTacToePlayerTurn.X, 0, 1, 0, 2)]
+        [DataRow(TicTacToePlayerTurn.O, 0, 1, 1, 0)]
+        [DataRow(TicTacToePlayerTurn.X, 0, 1, 1, 1)]
+        [DataRow(TicTacToePlayerTurn.O, 0, 1, 1, 2)]
+        [DataRow(TicTacToePlayerTurn.X, 0, 1, 2, 0)]
+        [DataRow(TicTacToePlayerTurn.O, 0, 1, 2, 1)]
+        [DataRow(TicTacToePlayerTurn.X, 0, 1, 2, 2)]
+
+        [DataRow(TicTacToePlayerTurn.X, 0, 2, 0, 0)]
+        [DataRow(TicTacToePlayerTurn.O, 0, 2, 0, 1)]
+        [DataRow(TicTacToePlayerTurn.X, 0, 2, 0, 2)]
+        [DataRow(TicTacToePlayerTurn.O, 0, 2, 1, 0)]
+        [DataRow(TicTacToePlayerTurn.X, 0, 2, 1, 1)]
+        [DataRow(TicTacToePlayerTurn.O, 0, 2, 1, 2)]
+        [DataRow(TicTacToePlayerTurn.X, 0, 2, 2, 0)]
+        [DataRow(TicTacToePlayerTurn.O, 0, 2, 2, 1)]
+        [DataRow(TicTacToePlayerTurn.X, 0, 2, 2, 2)]
+
+        [DataRow(TicTacToePlayerTurn.X, 1, 0, 0, 0)]
+        [DataRow(TicTacToePlayerTurn.O, 1, 0, 0, 1)]
+        [DataRow(TicTacToePlayerTurn.X, 1, 0, 0, 2)]
+        [DataRow(TicTacToePlayerTurn.O, 1, 0, 1, 0)]
+        [DataRow(TicTacToePlayerTurn.X, 1, 0, 1, 1)]
+        [DataRow(TicTacToePlayerTurn.O, 1, 0, 1, 2)]
+        [DataRow(TicTacToePlayerTurn.X, 1, 0, 2, 0)]
+        [DataRow(TicTacToePlayerTurn.O, 1, 0, 2, 1)]
+        [DataRow(TicTacToePlayerTurn.X, 1, 0, 2, 2)]
+
+        [DataRow(TicTacToePlayerTurn.X, 1, 1, 0, 0)]
+        [DataRow(TicTacToePlayerTurn.O, 1, 1, 0, 1)]
+        [DataRow(TicTacToePlayerTurn.X, 1, 1, 0, 2)]
+        [DataRow(TicTacToePlayerTurn.O, 1, 1, 1, 0)]
+        [DataRow(TicTacToePlayerTurn.X, 1, 1, 1, 1)]
+        [DataRow(TicTacToePlayerTurn.O, 1, 1, 1, 2)]
+        [DataRow(TicTacToePlayerTurn.X, 1, 1, 2, 0)]
+        [DataRow(TicTacToePlayerTurn.O, 1, 1, 2, 1)]
+        [DataRow(TicTacToePlayerTurn.X, 1, 1, 2, 2)]
+
+        [DataRow(TicTacToePlayerTurn.X, 1, 2, 0, 0)]
+        [DataRow(TicTacToePlayerTurn.O, 1, 2, 0, 1)]
+        [DataRow(TicTacToePlayerTurn.X, 1, 2, 0, 2)]
+        [DataRow(TicTacToePlayerTurn.O, 1, 2, 1, 0)]
+        [DataRow(TicTacToePlayerTurn.X, 1, 2, 1, 1)]
+        [DataRow(TicTacToePlayerTurn.O, 1, 2, 1, 2)]
+        [DataRow(TicTacToePlayerTurn.X, 1, 2, 2, 0)]
+        [DataRow(TicTacToePlayerTurn.O, 1, 2, 2, 1)]
+        [DataRow(TicTacToePlayerTurn.X, 1, 2, 2, 2)]
+
+        [DataRow(TicTacToePlayerTurn.X, 2, 0, 0, 0)]
+        [DataRow(TicTacToePlayerTurn.O, 2, 0, 0, 1)]
+        [DataRow(TicTacToePlayerTurn.X, 2, 0, 0, 2)]
+        [DataRow(TicTacToePlayerTurn.O, 2, 0, 1, 0)]
+        [DataRow(TicTacToePlayerTurn.X, 2, 0, 1, 1)]
+        [DataRow(TicTacToePlayerTurn.O, 2, 0, 1, 2)]
+        [DataRow(TicTacToePlayerTurn.X, 2, 0, 2, 0)]
+        [DataRow(TicTacToePlayerTurn.O, 2, 0, 2, 1)]
+        [DataRow(TicTacToePlayerTurn.X, 2, 0, 2, 2)]
+
+        [DataRow(TicTacToePlayerTurn.X, 2, 1, 0, 0)]
+        [DataRow(TicTacToePlayerTurn.O, 2, 1, 0, 1)]
+        [DataRow(TicTacToePlayerTurn.X, 2, 1, 0, 2)]
+        [DataRow(TicTacToePlayerTurn.O, 2, 1, 1, 0)]
+        [DataRow(TicTacToePlayerTurn.X, 2, 1, 1, 1)]
+        [DataRow(TicTacToePlayerTurn.O, 2, 1, 1, 2)]
+        [DataRow(TicTacToePlayerTurn.X, 2, 1, 2, 0)]
+        [DataRow(TicTacToePlayerTurn.O, 2, 1, 2, 1)]
+        [DataRow(TicTacToePlayerTurn.X, 2, 1, 2, 2)]
+
+        [DataRow(TicTacToePlayerTurn.X, 2, 2, 0, 0)]
+        [DataRow(TicTacToePlayerTurn.O, 2, 2, 0, 1)]
+        [DataRow(TicTacToePlayerTurn.X, 2, 2, 0, 2)]
+        [DataRow(TicTacToePlayerTurn.O, 2, 2, 1, 0)]
+        [DataRow(TicTacToePlayerTurn.X, 2, 2, 1, 1)]
+        [DataRow(TicTacToePlayerTurn.O, 2, 2, 1, 2)]
+        [DataRow(TicTacToePlayerTurn.X, 2, 2, 2, 0)]
+        [DataRow(TicTacToePlayerTurn.O, 2, 2, 2, 1)]
+        [DataRow(TicTacToePlayerTurn.X, 2, 2, 2, 2)]
+        #endregion
+        [DataTestMethod]
+        public void ButtonClickTest_fail(TicTacToePlayerTurn whoseturn, int gridX, int gridY, int X, int Y)
+        {
+            TicTacToeCellStatus status = whoseturn == TicTacToePlayerTurn.X ? TicTacToeCellStatus.X : TicTacToeCellStatus.O;
+            ttcsg.Setup(m => m.CheckCellStatus(gridX, gridY, X, Y)).Returns(() => status);
+            ttcsg.Setup(m => m.ClaimCell(gridX, gridY, X, Y)).Throws(new TicTacToeException("dummy"));
+            vm = new TicTacToeSuperGridViewModel(ttcsg.Object);
 
             string propertyName = "ImgSrc" + gridX.ToString()
                 + gridY.ToString()
                 + X.ToString()
                 + Y.ToString();
 
-            ImageSource source = (ImageSource)vm.GetType().GetProperty(propertyName).GetValue(vm);
-            ImageSource forComparison = new BitmapImage(new Uri(@"/./Resources/"
-                                + (whoseturn == TicTacToePlayerTurn.X ? "X_img.bmp" : "O_img.bmp"),
-                                UriKind.Relative));
+            vm.GetType().GetProperty(propertyName).SetValue(vm, new BitmapImage(new Uri(@"/../Super-tic-tac-toe/Resources/"
+                                                                                       + (whoseturn == TicTacToePlayerTurn.X? "X_img.bmp" : "O_img.bmp"),
+                                                                                       UriKind.Relative)));
+
+            ImageSource prebutton = (ImageSource)vm.GetType().GetProperty(propertyName).GetValue(vm);
+
+            vm.ButtonClick.Execute(new int[] { gridX, gridY, X, Y });
+
+            Assert.AreEqual(prebutton, (ImageSource)vm.GetType().GetProperty(propertyName).GetValue(vm));
         }
     }
 }
