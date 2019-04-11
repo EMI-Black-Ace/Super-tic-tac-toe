@@ -4,8 +4,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Super_tic_tac_toe.Views"
+             xmlns:ViewModels="clr-namespace:Super_tic_tac_toe.ViewModels"
              mc:Ignorable="d" 
-             d:DesignHeight="460" d:DesignWidth="460">
+             d:DesignHeight="460" d:DesignWidth="460"
+             d:DataContext="{d:DesignInstance ViewModels:TicTacToeSuperGridViewModel}">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Name="Column00" Width="50" />
@@ -33,95 +35,95 @@
             <RowDefinition Name="Row21" Height="50" />
             <RowDefinition Name="Row22" Height="50" />
         </Grid.RowDefinitions>
-        <Button x:Name="Btn0000" Content="" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn1000" Content="" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn2000" Content="" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn0100" Content="" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn1100" Content="" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn2100" Content="" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn0200" Content="" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn1200" Content="" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn2200" Content="" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
+        <Button x:Name="Btn0000" Command="{Binding ButtonClick}" Grid.Column="0"  Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc0000, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
+        <Button x:Name="Btn1000" Command="{Binding ButtonClick}" Grid.Column="0"  Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn2000" Command="{Binding ButtonClick}" Grid.Column="0"  Grid.Row="2"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn0100" Command="{Binding ButtonClick}" Grid.Column="1"  Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn1100" Command="{Binding ButtonClick}" Grid.Column="1"  Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn2100" Command="{Binding ButtonClick}" Grid.Column="1"  Grid.Row="2"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn0200" Command="{Binding ButtonClick}" Grid.Column="2"  Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn1200" Command="{Binding ButtonClick}" Grid.Column="2"  Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn2200" Command="{Binding ButtonClick}" Grid.Column="2"  Grid.Row="2"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+                                                                                                
+        <Button x:Name="Btn0001" Command="{Binding ButtonClick}" Grid.Column="4"  Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn1001" Command="{Binding ButtonClick}" Grid.Column="4"  Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn2001" Command="{Binding ButtonClick}" Grid.Column="4"  Grid.Row="2"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn0101" Command="{Binding ButtonClick}" Grid.Column="5"  Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn1101" Command="{Binding ButtonClick}" Grid.Column="5"  Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn2101" Command="{Binding ButtonClick}" Grid.Column="5"  Grid.Row="2"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn0201" Command="{Binding ButtonClick}" Grid.Column="6"  Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn1201" Command="{Binding ButtonClick}" Grid.Column="6"  Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn2201" Command="{Binding ButtonClick}" Grid.Column="6"  Grid.Row="2"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+                                                                                                
+        <Button x:Name="Btn0002" Command="{Binding ButtonClick}" Grid.Column="8"  Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn1002" Command="{Binding ButtonClick}" Grid.Column="8"  Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn2002" Command="{Binding ButtonClick}" Grid.Column="8"  Grid.Row="2"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn0102" Command="{Binding ButtonClick}" Grid.Column="9"  Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn1102" Command="{Binding ButtonClick}" Grid.Column="9"  Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn2102" Command="{Binding ButtonClick}" Grid.Column="9"  Grid.Row="2"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn0202" Command="{Binding ButtonClick}" Grid.Column="10" Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn1202" Command="{Binding ButtonClick}" Grid.Column="10" Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn2202" Command="{Binding ButtonClick}" Grid.Column="10" Grid.Row="2"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
 
-        <Button x:Name="Btn0001" Content="" Grid.Column="4" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn1001" Content="" Grid.Column="4" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn2001" Content="" Grid.Column="4" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn0101" Content="" Grid.Column="5" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn1101" Content="" Grid.Column="5" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn2101" Content="" Grid.Column="5" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn0201" Content="" Grid.Column="6" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn1201" Content="" Grid.Column="6" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn2201" Content="" Grid.Column="6" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
+        <Button x:Name="Btn0010" Command="{Binding ButtonClick}" Grid.Column="0"  Grid.Row="4"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn1010" Command="{Binding ButtonClick}" Grid.Column="0"  Grid.Row="5"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn2010" Command="{Binding ButtonClick}" Grid.Column="0"  Grid.Row="6"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn0110" Command="{Binding ButtonClick}" Grid.Column="1"  Grid.Row="4"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn1110" Command="{Binding ButtonClick}" Grid.Column="1"  Grid.Row="5"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn2110" Command="{Binding ButtonClick}" Grid.Column="1"  Grid.Row="6"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn0210" Command="{Binding ButtonClick}" Grid.Column="2"  Grid.Row="4"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn1210" Command="{Binding ButtonClick}" Grid.Column="2"  Grid.Row="5"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn2210" Command="{Binding ButtonClick}" Grid.Column="2"  Grid.Row="6"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+                                                                                                
+        <Button x:Name="Btn0011" Command="{Binding ButtonClick}" Grid.Column="4"  Grid.Row="4"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn1011" Command="{Binding ButtonClick}" Grid.Column="4"  Grid.Row="5"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn2011" Command="{Binding ButtonClick}" Grid.Column="4"  Grid.Row="6"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn0111" Command="{Binding ButtonClick}" Grid.Column="5"  Grid.Row="4"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn1111" Command="{Binding ButtonClick}" Grid.Column="5"  Grid.Row="5"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn2111" Command="{Binding ButtonClick}" Grid.Column="5"  Grid.Row="6"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn0211" Command="{Binding ButtonClick}" Grid.Column="6"  Grid.Row="4"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn1211" Command="{Binding ButtonClick}" Grid.Column="6"  Grid.Row="5"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn2211" Command="{Binding ButtonClick}" Grid.Column="6"  Grid.Row="6"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+                                                                                                
+        <Button x:Name="Btn0012" Command="{Binding ButtonClick}" Grid.Column="8"  Grid.Row="4"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn1012" Command="{Binding ButtonClick}" Grid.Column="8"  Grid.Row="5"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn2012" Command="{Binding ButtonClick}" Grid.Column="8"  Grid.Row="6"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn0112" Command="{Binding ButtonClick}" Grid.Column="9"  Grid.Row="4"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn1112" Command="{Binding ButtonClick}" Grid.Column="9"  Grid.Row="5"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn2112" Command="{Binding ButtonClick}" Grid.Column="9"  Grid.Row="6"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn0212" Command="{Binding ButtonClick}" Grid.Column="10" Grid.Row="4"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn1212" Command="{Binding ButtonClick}" Grid.Column="10" Grid.Row="5"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn2212" Command="{Binding ButtonClick}" Grid.Column="10" Grid.Row="6"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
 
-        <Button x:Name="Btn0002" Content="" Grid.Column="8" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn1002" Content="" Grid.Column="8" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn2002" Content="" Grid.Column="8" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn0102" Content="" Grid.Column="9" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn1102" Content="" Grid.Column="9" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn2102" Content="" Grid.Column="9" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn0202" Content="" Grid.Column="10" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn1202" Content="" Grid.Column="10" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn2202" Content="" Grid.Column="10" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
+        <Button x:Name="Btn0020" Command="{Binding ButtonClick}" Grid.Column="0"  Grid.Row="8"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn1020" Command="{Binding ButtonClick}" Grid.Column="0"  Grid.Row="9"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn2020" Command="{Binding ButtonClick}" Grid.Column="0"  Grid.Row="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn0120" Command="{Binding ButtonClick}" Grid.Column="1"  Grid.Row="8"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn1120" Command="{Binding ButtonClick}" Grid.Column="1"  Grid.Row="9"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn2120" Command="{Binding ButtonClick}" Grid.Column="1"  Grid.Row="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn0220" Command="{Binding ButtonClick}" Grid.Column="2"  Grid.Row="8"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn1220" Command="{Binding ButtonClick}" Grid.Column="2"  Grid.Row="9"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn2220" Command="{Binding ButtonClick}" Grid.Column="2"  Grid.Row="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+                                                                                  
+        <Button x:Name="Btn0021" Command="{Binding ButtonClick}" Grid.Column="4"  Grid.Row="8"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn1021" Command="{Binding ButtonClick}" Grid.Column="4"  Grid.Row="9"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn2021" Command="{Binding ButtonClick}" Grid.Column="4"  Grid.Row="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn0121" Command="{Binding ButtonClick}" Grid.Column="5"  Grid.Row="8"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn1121" Command="{Binding ButtonClick}" Grid.Column="5"  Grid.Row="9"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn2121" Command="{Binding ButtonClick}" Grid.Column="5"  Grid.Row="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn0221" Command="{Binding ButtonClick}" Grid.Column="6"  Grid.Row="8"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn1221" Command="{Binding ButtonClick}" Grid.Column="6"  Grid.Row="9"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn2221" Command="{Binding ButtonClick}" Grid.Column="6"  Grid.Row="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
 
-        <Button x:Name="Btn0010" Content="" Grid.Column="0" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn1010" Content="" Grid.Column="0" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn2010" Content="" Grid.Column="0" Grid.Row="6" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn0110" Content="" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn1110" Content="" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn2110" Content="" Grid.Column="1" Grid.Row="6" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn0210" Content="" Grid.Column="2" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn1210" Content="" Grid.Column="2" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn2210" Content="" Grid.Column="2" Grid.Row="6" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-
-        <Button x:Name="Btn0011" Content="" Grid.Column="4" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn1011" Content="" Grid.Column="4" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn2011" Content="" Grid.Column="4" Grid.Row="6" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn0111" Content="" Grid.Column="5" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn1111" Content="" Grid.Column="5" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn2111" Content="" Grid.Column="5" Grid.Row="6" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn0211" Content="" Grid.Column="6" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn1211" Content="" Grid.Column="6" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn2211" Content="" Grid.Column="6" Grid.Row="6" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-
-        <Button x:Name="Btn0012" Content="" Grid.Column="8" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn1012" Content="" Grid.Column="8" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn2012" Content="" Grid.Column="8" Grid.Row="6" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn0112" Content="" Grid.Column="9" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn1112" Content="" Grid.Column="9" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn2112" Content="" Grid.Column="9" Grid.Row="6" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn0212" Content="" Grid.Column="10" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn1212" Content="" Grid.Column="10" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn2212" Content="" Grid.Column="10" Grid.Row="6" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-
-        <Button x:Name="Btn0020" Content="" Grid.Column="0" Grid.Row="8" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn1020" Content="" Grid.Column="0" Grid.Row="9" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn2020" Content="" Grid.Column="0" Grid.Row="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn0120" Content="" Grid.Column="1" Grid.Row="8" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn1120" Content="" Grid.Column="1" Grid.Row="9" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn2120" Content="" Grid.Column="1" Grid.Row="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn0220" Content="" Grid.Column="2" Grid.Row="8" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn1220" Content="" Grid.Column="2" Grid.Row="9" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn2220" Content="" Grid.Column="2" Grid.Row="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-
-        <Button x:Name="Btn0021" Content="" Grid.Column="4" Grid.Row="8" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn1021" Content="" Grid.Column="4" Grid.Row="9" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn2021" Content="" Grid.Column="4" Grid.Row="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn0121" Content="" Grid.Column="5" Grid.Row="8" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn1121" Content="" Grid.Column="5" Grid.Row="9" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn2121" Content="" Grid.Column="5" Grid.Row="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn0221" Content="" Grid.Column="6" Grid.Row="8" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn1221" Content="" Grid.Column="6" Grid.Row="9" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn2221" Content="" Grid.Column="6" Grid.Row="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-
-        <Button x:Name="Btn0022" Content="" Grid.Column="8" Grid.Row="8" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn1022" Content="" Grid.Column="8" Grid.Row="9" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn2022" Content="" Grid.Column="8" Grid.Row="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn0122" Content="" Grid.Column="9" Grid.Row="8" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn1122" Content="" Grid.Column="9" Grid.Row="9" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn2122" Content="" Grid.Column="9" Grid.Row="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn0222" Content="" Grid.Column="10" Grid.Row="8" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn1222" Content="" Grid.Column="10" Grid.Row="9" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
-        <Button x:Name="Btn2222" Content="" Grid.Column="10" Grid.Row="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"/>
+        <Button x:Name="Btn0022" Command="{Binding ButtonClick}" Grid.Column="8"  Grid.Row="8"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn1022" Command="{Binding ButtonClick}" Grid.Column="8"  Grid.Row="9"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn2022" Command="{Binding ButtonClick}" Grid.Column="8"  Grid.Row="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn0122" Command="{Binding ButtonClick}" Grid.Column="9"  Grid.Row="8"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn1122" Command="{Binding ButtonClick}" Grid.Column="9"  Grid.Row="9"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn2122" Command="{Binding ButtonClick}" Grid.Column="9"  Grid.Row="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn0222" Command="{Binding ButtonClick}" Grid.Column="10" Grid.Row="8"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn1222" Command="{Binding ButtonClick}" Grid.Column="10" Grid.Row="9"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+        <Button x:Name="Btn2222" Command="{Binding ButtonClick}" Grid.Column="10" Grid.Row="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
 
     </Grid>
 </UserControl>
