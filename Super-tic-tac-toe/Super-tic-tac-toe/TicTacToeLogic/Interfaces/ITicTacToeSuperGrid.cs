@@ -11,6 +11,9 @@ namespace Super_tic_tac_toe
         event OverallWinHandler GameWon;
         event SubGridWinHandler GridWon;
         event MoveHandler MoveMade;
+
+        TicTacToePlayerTurn WhoseTurn { get; }
+
         TicTacToeGridStatus CheckGridStatus(int gridX, int gridY);
         TicTacToeCellStatus CheckCellStatus(int gridX, int gridY, int X, int Y);
         void ClaimCell(int gridX, int gridY, int X, int Y);
