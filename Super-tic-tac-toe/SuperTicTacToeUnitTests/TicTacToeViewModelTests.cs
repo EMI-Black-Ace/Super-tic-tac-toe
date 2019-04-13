@@ -8,6 +8,7 @@ using Moq;
 using System.Reflection;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Controls;
 
 namespace SuperTicTacToeTests
 {
@@ -117,6 +118,8 @@ namespace SuperTicTacToeTests
         [DataTestMethod]
         public void ButtonClickTest_success(TicTacToePlayerTurn whoseturn, int gridX, int gridY, int X, int Y)
         {
+            Button button = new Button();
+            button.Name = "btn" + gridY.ToString() + gridX.ToString() + X.ToString() + Y.ToString();
             TicTacToeCellStatus status = TicTacToeCellStatus.Unclaimed;
             ttcsg.Setup(m => m.CheckCellStatus(gridX, gridY, X, Y)).Returns(() => status);
             ttcsg.Setup(m => m.ClaimCell(gridX, gridY, X, Y)).Raises(m => m.MoveMade += null, new TicTacToeTurnEventArgs(whoseturn, X, Y, gridX, gridY, X, Y));
@@ -135,7 +138,7 @@ namespace SuperTicTacToeTests
 
             Assert.IsNull((ImageSource)vm.GetType().GetProperty(propertyName).GetValue(vm));
 
-            vm.ButtonClick.Execute(new int[] { gridX, gridY, X, Y });
+            vm.ButtonClick.Execute(button);
 
             Assert.IsNotNull((ImageSource)vm.GetType().GetProperty(propertyName).GetValue(vm));
         }

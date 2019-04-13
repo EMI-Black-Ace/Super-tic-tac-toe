@@ -102,8 +102,6 @@ C:\Source\Repos\Super-tic-tac-toe\Super-tic-tac-toe\SuperTicTacToeUnitTests\bin\
 C:\Source\Repos\Super-tic-tac-toe\Super-tic-tac-toe\SuperTicTacToeUnitTests\bin\Debug\System.Xml.XPath.dll
 C:\Source\Repos\Super-tic-tac-toe\Super-tic-tac-toe\SuperTicTacToeUnitTests\bin\Debug\System.Xml.XPath.XDocument.dll
 C:\Source\Repos\Super-tic-tac-toe\Super-tic-tac-toe\SuperTicTacToeUnitTests\bin\Debug\Castle.Core.dll
-C:\Source\Repos\Super-tic-tac-toe\Super-tic-tac-toe\SuperTicTacToeUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
-C:\Source\Repos\Super-tic-tac-toe\Super-tic-tac-toe\SuperTicTacToeUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
 C:\Source\Repos\Super-tic-tac-toe\Super-tic-tac-toe\SuperTicTacToeUnitTests\bin\Debug\Moq.dll
 C:\Source\Repos\Super-tic-tac-toe\Super-tic-tac-toe\SuperTicTacToeUnitTests\bin\Debug\Super-tic-tac-toe.exe
 C:\Source\Repos\Super-tic-tac-toe\Super-tic-tac-toe\SuperTicTacToeUnitTests\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
@@ -120,3 +118,5 @@ C:\Source\Repos\Super-tic-tac-toe\Super-tic-tac-toe\SuperTicTacToeUnitTests\bin\
 C:\Source\Repos\Super-tic-tac-toe\Super-tic-tac-toe\SuperTicTacToeUnitTests\obj\Debug\SuperTicTacToeUnitTests.csproj.CopyComplete
 C:\Source\Repos\Super-tic-tac-toe\Super-tic-tac-toe\SuperTicTacToeUnitTests\obj\Debug\SuperTicTacToeUnitTests.dll
 C:\Source\Repos\Super-tic-tac-toe\Super-tic-tac-toe\SuperTicTacToeUnitTests\obj\Debug\SuperTicTacToeUnitTests.pdb
+C:\Source\Repos\Super-tic-tac-toe\Super-tic-tac-toe\SuperTicTacToeUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Source\Repos\Super-tic-tac-toe\Super-tic-tac-toe\SuperTicTacToeUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll

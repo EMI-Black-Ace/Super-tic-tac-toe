@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -20,7 +21,7 @@ namespace Super_tic_tac_toe.ViewModels
         {
             superGrid = SuperGrid;
             superGrid.MoveMade += SuperGrid_MoveMade;
-            ButtonClick = new RelayCommand((x) => OnButtonClick(x as int[]));
+            ButtonClick = new RelayCommand((x) => OnButtonClick(x as Button));
         }
 
         private void SuperGrid_MoveMade(object sender, TicTacToeTurnEventArgs e)
@@ -135,10 +136,15 @@ namespace Super_tic_tac_toe.ViewModels
         /// <summary>
         /// Command bound to button clicks.  Must pass in int[] parameter.
         /// </summary>
-        public ICommand ButtonClick { get; set; }
+        public ICommand ButtonClick { get; }
 
-        private void OnButtonClick(int[] GridLocation)
+        private void OnButtonClick(Button sender)
         {
+            int[] GridLocation = new int[4];
+            GridLocation[2] = Convert.ToInt32(sender.Name[3]);
+            GridLocation[3] = Convert.ToInt32(sender.Name[4]);
+            GridLocation[0] = Convert.ToInt32(sender.Name[5]);
+            GridLocation[1] = Convert.ToInt32(sender.Name[6]);
             try
             {
                 superGrid.ClaimCell(GridLocation[0], GridLocation[1], GridLocation[2], GridLocation[3]);
