@@ -4,10 +4,8 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
 
 namespace Super_tic_tac_toe.ViewModels
 {
@@ -16,6 +14,7 @@ namespace Super_tic_tac_toe.ViewModels
         private ITicTacToeSuperGrid superGrid;
 
         public string[,,,] imageGrid = new string[3, 3, 3, 3];
+        public Brush[,] backgroundGrid = new Brush[3, 3];
 
         public TicTacToeSuperGridViewModel(ITicTacToeSuperGrid superGrid)
         {
@@ -31,6 +30,10 @@ namespace Super_tic_tac_toe.ViewModels
         {
             this.superGrid = superGrid;
             ButtonClick = new RelayCommand((x) => OnButtonClick(x));
+
+            for (int i = 0; i < 3; ++i)
+                for (int j = 0; j < 3; ++j)
+                    backgroundGrid[i, j] = Brushes.Blue;
         }
 
         #region Image Grid Properties
@@ -127,6 +130,18 @@ namespace Super_tic_tac_toe.ViewModels
 
         #endregion
 
+        #region Subgrid background color properties
+        public Brush BrushSource00 { get { return backgroundGrid[0, 0]; } set { backgroundGrid[0, 0] = value; OnPropertyChanged("BrushSource00"); } }
+        public Brush BrushSource01 { get { return backgroundGrid[0, 1]; } set { backgroundGrid[0, 1] = value; OnPropertyChanged("BrushSource01"); } }
+        public Brush BrushSource02 { get { return backgroundGrid[0, 2]; } set { backgroundGrid[0, 2] = value; OnPropertyChanged("BrushSource02"); } }
+        public Brush BrushSource10 { get { return backgroundGrid[1, 0]; } set { backgroundGrid[1, 0] = value; OnPropertyChanged("BrushSource10"); } }
+        public Brush BrushSource11 { get { return backgroundGrid[1, 1]; } set { backgroundGrid[1, 1] = value; OnPropertyChanged("BrushSource11"); } }
+        public Brush BrushSource12 { get { return backgroundGrid[1, 2]; } set { backgroundGrid[1, 2] = value; OnPropertyChanged("BrushSource12"); } }
+        public Brush BrushSource20 { get { return backgroundGrid[2, 0]; } set { backgroundGrid[2, 0] = value; OnPropertyChanged("BrushSource20"); } }
+        public Brush BrushSource21 { get { return backgroundGrid[2, 1]; } set { backgroundGrid[2, 1] = value; OnPropertyChanged("BrushSource21"); } }
+        public Brush BrushSource22 { get { return backgroundGrid[2, 1]; } set { backgroundGrid[2, 1] = value; OnPropertyChanged("BrushSource22"); } }
+        #endregion
+
         /// <summary>
         /// Command bound to button clicks.  Must pass in int[] parameter.
         /// </summary>
@@ -146,13 +161,29 @@ namespace Super_tic_tac_toe.ViewModels
 
                 superGrid.ClaimCell(MoveXGrid, MoveYGrid, MoveX, MoveY);
 
-                string propertyName = "ImgSrc" + MoveX.ToString()
+                string cellPropertyName = "ImgSrc" + MoveX.ToString()
                 + MoveY.ToString()
                 + MoveYGrid.ToString()
                 + MoveXGrid.ToString();
                 
-                PropertyInfo property = this.GetType().GetProperty(propertyName);
-                property.SetValue(this, imageFilePath);
+                PropertyInfo cellProperty = this.GetType().GetProperty(cellPropertyName);
+                cellProperty.SetValue(this, imageFilePath);
+
+                Brush colorAll = superGrid.NextMoveX < 0 ? Brushes.Green : Brushes.Red;
+                for(int i = 0; i < 3; ++i)
+                {
+                    for(int j = 0; j < 3; ++j)
+                    {
+                        string gridPropertyName = string.Format("BrushSource{0}{1}", j, i);
+
+                        if (superGrid.CheckGridStatus(i, j) != TicTacToeGridStatus.Contested)
+                            GetType().GetProperty(gridPropertyName).SetValue(this, Brushes.Gold);
+                        else if(i == superGrid.NextMoveX && j == superGrid.NextMoveY)
+                            GetType().GetProperty(gridPropertyName).SetValue(this, Brushes.Green);
+                        else
+                            GetType().GetProperty(gridPropertyName).SetValue(this, colorAll);
+                    }
+                }
             }
             catch (TicTacToeException)
             {

@@ -11,7 +11,7 @@
     <UserControl.DataContext>
         <ObjectDataProvider d:IsDataSource="True" />
     </UserControl.DataContext>
-    
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Name="Column00" Width="50" />
@@ -39,95 +39,432 @@
             <RowDefinition Name="Row21" Height="50" />
             <RowDefinition Name="Row22" Height="50" />
         </Grid.RowDefinitions>
-        <Button x:Name="Btn0000" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0000}" Grid.Column="0"  Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc0000, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn1000" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1000}" Grid.Column="0"  Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc0100, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn2000" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2000}" Grid.Column="0"  Grid.Row="2"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc0200, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn0100" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0100}" Grid.Column="1"  Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc1000, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn1100" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1100}" Grid.Column="1"  Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc1100, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn2100" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2100}" Grid.Column="1"  Grid.Row="2"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc1200, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn0200" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0200}" Grid.Column="2"  Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc2000, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn1200" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1200}" Grid.Column="2"  Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc2100, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn2200" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2200}" Grid.Column="2"  Grid.Row="2"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc2200, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
 
-        <Button x:Name="Btn0001" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0001}" Grid.Column="4"  Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc0001, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn1001" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1001}" Grid.Column="4"  Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc0101, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn2001" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2001}" Grid.Column="4"  Grid.Row="2"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc0201, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn0101" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0101}" Grid.Column="5"  Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc1001, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn1101" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1101}" Grid.Column="5"  Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc1101, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn2101" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2101}" Grid.Column="5"  Grid.Row="2"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc1201, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn0201" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0201}" Grid.Column="6"  Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc2001, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn1201" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1201}" Grid.Column="6"  Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc2101, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn2201" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2201}" Grid.Column="6"  Grid.Row="2"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc2201, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
+        <Rectangle Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan="3" Fill="{Binding BrushSource00, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" VerticalAlignment ="Top"    Stroke="Black" Width="152.5" Height="152.5" />
+        <Rectangle Grid.Row="4" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan="3" Fill="{Binding BrushSource10, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" VerticalAlignment ="Center" Stroke="Black" Width="152.5" Height="155" />
+        <Rectangle Grid.Row="8" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan="3" Fill="{Binding BrushSource20, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" VerticalAlignment ="Bottom" Stroke="Black" Width="152.5" Height="152.5" />
 
-        <Button x:Name="Btn0002" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0002}" Grid.Column="8"  Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc0002, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn1002" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1002}" Grid.Column="8"  Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc0102, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn2002" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2002}" Grid.Column="8"  Grid.Row="2"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc0202, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn0102" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0102}" Grid.Column="9"  Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc1002, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn1102" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1102}" Grid.Column="9"  Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc1102, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn2102" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2102}" Grid.Column="9"  Grid.Row="2"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc1202, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn0202" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0202}" Grid.Column="10" Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc2002, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn1202" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1202}" Grid.Column="10" Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc2102, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn2202" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2202}" Grid.Column="10" Grid.Row="2"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc2202, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
+        <Rectangle Grid.Row="0" Grid.RowSpan="3" Grid.Column="4" Grid.ColumnSpan="3" Fill="{Binding BrushSource01, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment ="Top"    Stroke="Black" Width="155" Height="152.5" />
+        <Rectangle Grid.Row="4" Grid.RowSpan="3" Grid.Column="4" Grid.ColumnSpan="3" Fill="{Binding BrushSource11, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment ="Center" Stroke="Black" Width="155" Height="155" />
+        <Rectangle Grid.Row="8" Grid.RowSpan="3" Grid.Column="4" Grid.ColumnSpan="3" Fill="{Binding BrushSource21, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment ="Bottom" Stroke="Black" Width="155" Height="152.5" />
 
-        <Button x:Name="Btn0010" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0010}" Grid.Column="0"  Grid.Row="4"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc0010, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn1010" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1010}" Grid.Column="0"  Grid.Row="5"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc0110, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn2010" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2010}" Grid.Column="0"  Grid.Row="6"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc0210, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn0110" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0110}" Grid.Column="1"  Grid.Row="4"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc1010, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn1110" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1110}" Grid.Column="1"  Grid.Row="5"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc1110, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn2110" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2110}" Grid.Column="1"  Grid.Row="6"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc1210, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn0210" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0210}" Grid.Column="2"  Grid.Row="4"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc2010, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn1210" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1210}" Grid.Column="2"  Grid.Row="5"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc2110, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn2210" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2210}" Grid.Column="2"  Grid.Row="6"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc2210, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-                                                                                                             
-        <Button x:Name="Btn0011" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0011}" Grid.Column="4"  Grid.Row="4"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc0011, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn1011" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1011}" Grid.Column="4"  Grid.Row="5"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc0111, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn2011" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2011}" Grid.Column="4"  Grid.Row="6"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc0211, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn0111" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0111}" Grid.Column="5"  Grid.Row="4"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc1011, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn1111" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1111}" Grid.Column="5"  Grid.Row="5"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc1111, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn2111" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2111}" Grid.Column="5"  Grid.Row="6"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc1211, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn0211" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0211}" Grid.Column="6"  Grid.Row="4"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc2011, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn1211" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1211}" Grid.Column="6"  Grid.Row="5"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc2111, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn2211" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2211}" Grid.Column="6"  Grid.Row="6"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc2211, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-                                                                                                             
-        <Button x:Name="Btn0012" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0012}" Grid.Column="8"  Grid.Row="4"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc0012, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn1012" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1012}" Grid.Column="8"  Grid.Row="5"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc0112, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn2012" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2012}" Grid.Column="8"  Grid.Row="6"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc0212, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn0112" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0112}" Grid.Column="9"  Grid.Row="4"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc1012, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn1112" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1112}" Grid.Column="9"  Grid.Row="5"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc1112, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn2112" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2112}" Grid.Column="9"  Grid.Row="6"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc1212, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn0212" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0212}" Grid.Column="10" Grid.Row="4"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc2012, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn1212" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1212}" Grid.Column="10" Grid.Row="5"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc2112, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn2212" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2212}" Grid.Column="10" Grid.Row="6"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc2212, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
+        <Rectangle Grid.Row="0" Grid.RowSpan="3" Grid.Column="8" Grid.ColumnSpan="3" Fill="{Binding BrushSource02, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Right" VerticalAlignment ="Top"    Stroke="Black" Width="152.5" Height="152.5" />
+        <Rectangle Grid.Row="4" Grid.RowSpan="3" Grid.Column="8" Grid.ColumnSpan="3" Fill="{Binding BrushSource12, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Right" VerticalAlignment ="Center" Stroke="Black" Width="152.5" Height="155" />
+        <Rectangle Grid.Row="8" Grid.RowSpan="3" Grid.Column="8" Grid.ColumnSpan="3" Fill="{Binding BrushSource22, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Right" VerticalAlignment ="Bottom" Stroke="Black" Width="152.5" Height="152.5" />
 
-        <Button x:Name="Btn0020" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0020}" Grid.Column="0"  Grid.Row="8"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc0020, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn1020" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1020}" Grid.Column="0"  Grid.Row="9"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc0120, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn2020" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2020}" Grid.Column="0"  Grid.Row="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc0220, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn0120" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0120}" Grid.Column="1"  Grid.Row="8"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc1020, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn1120" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1120}" Grid.Column="1"  Grid.Row="9"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc1120, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn2120" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2120}" Grid.Column="1"  Grid.Row="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc1220, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn0220" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0220}" Grid.Column="2"  Grid.Row="8"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc2020, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn1220" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1220}" Grid.Column="2"  Grid.Row="9"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc2120, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn2220" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2220}" Grid.Column="2"  Grid.Row="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc2220, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-                                                                                                             
-        <Button x:Name="Btn0021" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0021}" Grid.Column="4"  Grid.Row="8"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc0021, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn1021" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1021}" Grid.Column="4"  Grid.Row="9"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc0121, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn2021" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2021}" Grid.Column="4"  Grid.Row="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc0221, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn0121" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0121}" Grid.Column="5"  Grid.Row="8"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc1021, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn1121" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1121}" Grid.Column="5"  Grid.Row="9"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc1121, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn2121" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2121}" Grid.Column="5"  Grid.Row="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc1221, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn0221" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0221}" Grid.Column="6"  Grid.Row="8"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc2021, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn1221" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1221}" Grid.Column="6"  Grid.Row="9"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc2121, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn2221" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2221}" Grid.Column="6"  Grid.Row="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc2221, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-                                                                                                             
-        <Button x:Name="Btn0022" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0022}" Grid.Column="8"  Grid.Row="8"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc0022, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn1022" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1022}" Grid.Column="8"  Grid.Row="9"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc0122, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn2022" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2022}" Grid.Column="8"  Grid.Row="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc0222, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn0122" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0122}" Grid.Column="9"  Grid.Row="8"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc1022, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn1122" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1122}" Grid.Column="9"  Grid.Row="9"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc1122, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn2122" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2122}" Grid.Column="9"  Grid.Row="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc1222, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn0222" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0222}" Grid.Column="10" Grid.Row="8"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc2022, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn1222" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1222}" Grid.Column="10" Grid.Row="9"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc2122, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-        <Button x:Name="Btn2222" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2222}" Grid.Column="10" Grid.Row="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48"> <StackPanel> <Image Source="{Binding ImgSrc2222, UpdateSourceTrigger=PropertyChanged}"/> </StackPanel> </Button>
-                                                                                                                                                                               
-    </Grid>                                                                                                                                                                    
+        <Button x:Name="Btn0000" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0000}" Grid.Column="0"  Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc0000, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn1000" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1000}" Grid.Column="0"  Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc0100, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn2000" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2000}" Grid.Column="0"  Grid.Row="2"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc0200, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn0100" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0100}" Grid.Column="1"  Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc1000, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn1100" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1100}" Grid.Column="1"  Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc1100, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn2100" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2100}" Grid.Column="1"  Grid.Row="2"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc1200, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn0200" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0200}" Grid.Column="2"  Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc2000, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn1200" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1200}" Grid.Column="2"  Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc2100, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn2200" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2200}" Grid.Column="2"  Grid.Row="2"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc2200, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+
+        <Button x:Name="Btn0001" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0001}" Grid.Column="4"  Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc0001, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn1001" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1001}" Grid.Column="4"  Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc0101, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn2001" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2001}" Grid.Column="4"  Grid.Row="2"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc0201, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn0101" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0101}" Grid.Column="5"  Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc1001, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn1101" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1101}" Grid.Column="5"  Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc1101, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn2101" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2101}" Grid.Column="5"  Grid.Row="2"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc1201, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn0201" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0201}" Grid.Column="6"  Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc2001, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn1201" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1201}" Grid.Column="6"  Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc2101, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn2201" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2201}" Grid.Column="6"  Grid.Row="2"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc2201, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+
+        <Button x:Name="Btn0002" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0002}" Grid.Column="8"  Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc0002, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn1002" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1002}" Grid.Column="8"  Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc0102, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn2002" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2002}" Grid.Column="8"  Grid.Row="2"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc0202, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn0102" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0102}" Grid.Column="9"  Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc1002, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn1102" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1102}" Grid.Column="9"  Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc1102, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn2102" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2102}" Grid.Column="9"  Grid.Row="2"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc1202, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn0202" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0202}" Grid.Column="10" Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc2002, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn1202" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1202}" Grid.Column="10" Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc2102, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn2202" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2202}" Grid.Column="10" Grid.Row="2"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc2202, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+
+        <Button x:Name="Btn0010" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0010}" Grid.Column="0"  Grid.Row="4"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc0010, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn1010" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1010}" Grid.Column="0"  Grid.Row="5"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc0110, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn2010" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2010}" Grid.Column="0"  Grid.Row="6"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc0210, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn0110" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0110}" Grid.Column="1"  Grid.Row="4"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc1010, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn1110" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1110}" Grid.Column="1"  Grid.Row="5"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc1110, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn2110" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2110}" Grid.Column="1"  Grid.Row="6"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc1210, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn0210" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0210}" Grid.Column="2"  Grid.Row="4"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc2010, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn1210" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1210}" Grid.Column="2"  Grid.Row="5"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc2110, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn2210" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2210}" Grid.Column="2"  Grid.Row="6"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc2210, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+
+        <Button x:Name="Btn0011" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0011}" Grid.Column="4"  Grid.Row="4"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc0011, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn1011" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1011}" Grid.Column="4"  Grid.Row="5"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc0111, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn2011" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2011}" Grid.Column="4"  Grid.Row="6"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc0211, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn0111" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0111}" Grid.Column="5"  Grid.Row="4"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc1011, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn1111" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1111}" Grid.Column="5"  Grid.Row="5"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc1111, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn2111" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2111}" Grid.Column="5"  Grid.Row="6"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc1211, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn0211" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0211}" Grid.Column="6"  Grid.Row="4"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc2011, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn1211" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1211}" Grid.Column="6"  Grid.Row="5"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc2111, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn2211" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2211}" Grid.Column="6"  Grid.Row="6"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc2211, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+
+        <Button x:Name="Btn0012" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0012}" Grid.Column="8"  Grid.Row="4"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc0012, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn1012" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1012}" Grid.Column="8"  Grid.Row="5"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc0112, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn2012" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2012}" Grid.Column="8"  Grid.Row="6"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc0212, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn0112" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0112}" Grid.Column="9"  Grid.Row="4"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc1012, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn1112" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1112}" Grid.Column="9"  Grid.Row="5"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc1112, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn2112" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2112}" Grid.Column="9"  Grid.Row="6"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc1212, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn0212" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0212}" Grid.Column="10" Grid.Row="4"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc2012, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn1212" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1212}" Grid.Column="10" Grid.Row="5"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc2112, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn2212" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2212}" Grid.Column="10" Grid.Row="6"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc2212, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+
+        <Button x:Name="Btn0020" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0020}" Grid.Column="0"  Grid.Row="8"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc0020, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn1020" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1020}" Grid.Column="0"  Grid.Row="9"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc0120, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn2020" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2020}" Grid.Column="0"  Grid.Row="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc0220, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn0120" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0120}" Grid.Column="1"  Grid.Row="8"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc1020, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn1120" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1120}" Grid.Column="1"  Grid.Row="9"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc1120, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn2120" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2120}" Grid.Column="1"  Grid.Row="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc1220, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn0220" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0220}" Grid.Column="2"  Grid.Row="8"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc2020, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn1220" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1220}" Grid.Column="2"  Grid.Row="9"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc2120, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn2220" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2220}" Grid.Column="2"  Grid.Row="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc2220, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+
+        <Button x:Name="Btn0021" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0021}" Grid.Column="4"  Grid.Row="8"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc0021, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn1021" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1021}" Grid.Column="4"  Grid.Row="9"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc0121, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn2021" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2021}" Grid.Column="4"  Grid.Row="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc0221, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn0121" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0121}" Grid.Column="5"  Grid.Row="8"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc1021, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn1121" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1121}" Grid.Column="5"  Grid.Row="9"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc1121, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn2121" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2121}" Grid.Column="5"  Grid.Row="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc1221, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn0221" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0221}" Grid.Column="6"  Grid.Row="8"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc2021, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn1221" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1221}" Grid.Column="6"  Grid.Row="9"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc2121, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn2221" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2221}" Grid.Column="6"  Grid.Row="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc2221, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+
+        <Button x:Name="Btn0022" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0022}" Grid.Column="8"  Grid.Row="8"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc0022, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn1022" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1022}" Grid.Column="8"  Grid.Row="9"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc0122, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn2022" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2022}" Grid.Column="8"  Grid.Row="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc0222, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn0122" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0122}" Grid.Column="9"  Grid.Row="8"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc1022, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn1122" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1122}" Grid.Column="9"  Grid.Row="9"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc1122, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn2122" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2122}" Grid.Column="9"  Grid.Row="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc1222, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn0222" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn0222}" Grid.Column="10" Grid.Row="8"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc2022, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn1222" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn1222}" Grid.Column="10" Grid.Row="9"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc2122, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Btn2222" Command="{Binding ButtonClick}" CommandParameter="{Binding ElementName=Btn2222}" Grid.Column="10" Grid.Row="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48">
+            <StackPanel>
+                <Image Source="{Binding ImgSrc2222, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Button>
+
+    </Grid>
 </UserControl>

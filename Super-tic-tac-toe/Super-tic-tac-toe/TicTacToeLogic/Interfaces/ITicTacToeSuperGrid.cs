@@ -18,5 +18,8 @@ namespace Super_tic_tac_toe
         TicTacToeCellStatus CheckCellStatus(int gridX, int gridY, int X, int Y);
         void ClaimCell(int gridX, int gridY, int X, int Y);
         void Reset();
+
+        int NextMoveX { get; }
+        int NextMoveY { get; }
     }
 }
