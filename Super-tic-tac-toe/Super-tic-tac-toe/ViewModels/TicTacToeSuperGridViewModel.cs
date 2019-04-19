@@ -161,10 +161,7 @@ namespace Super_tic_tac_toe.ViewModels
 
                 superGrid.ClaimCell(MoveXGrid, MoveYGrid, MoveX, MoveY);
 
-                string cellPropertyName = "ImgSrc" + MoveX.ToString()
-                + MoveY.ToString()
-                + MoveYGrid.ToString()
-                + MoveXGrid.ToString();
+                string cellPropertyName = string.Format("ImgSrc{0}{1}{2}{3}", MoveX, MoveY, MoveYGrid, MoveXGrid);
                 
                 PropertyInfo cellProperty = this.GetType().GetProperty(cellPropertyName);
                 cellProperty.SetValue(this, imageFilePath);
