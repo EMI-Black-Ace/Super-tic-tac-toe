@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Super_tic_tac_toe.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,11 +19,12 @@ namespace Super_tic_tac_toe.Views
     /// <summary>
     /// Interaction logic for TicTacToeGridView.xaml
     /// </summary>
-    public partial class TicTacToeGridView : UserControl
+    public partial class TicTacToeSuperGridView : UserControl
     {
-        public TicTacToeGridView()
+        public TicTacToeSuperGridView()
         {
             InitializeComponent();
+            DataContext = new TicTacToeSuperGridViewModel();
         }
     }
 }

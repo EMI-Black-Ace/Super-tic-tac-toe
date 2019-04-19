@@ -5,7 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Super_tic_tac_toe"
         xmlns:Views="clr-namespace:Super_tic_tac_toe.Views" x:Class="Super_tic_tac_toe.MainWindow"
+        xmlns:ViewModels="clr-namespace:Super_tic_tac_toe.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid/>
+        Title="Super Tic Tac Toe" 
+        SizeToContent="WidthAndHeight">
+
+    <Grid>
+        <Views:TicTacToeSuperGridView/>
+    </Grid>
 </Window>

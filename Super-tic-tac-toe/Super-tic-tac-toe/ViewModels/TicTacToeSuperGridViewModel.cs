@@ -17,9 +17,19 @@ namespace Super_tic_tac_toe.ViewModels
 
         public string[,,,] imageGrid = new string[3, 3, 3, 3];
 
-        public TicTacToeSuperGridViewModel(ITicTacToeSuperGrid SuperGrid)
+        public TicTacToeSuperGridViewModel(ITicTacToeSuperGrid superGrid)
         {
-            superGrid = SuperGrid;
+            InitViewModel(superGrid);
+        }
+
+        public TicTacToeSuperGridViewModel()
+        {
+            InitViewModel(new TicTacToeSuperGrid());
+        }
+
+        private void InitViewModel(ITicTacToeSuperGrid superGrid)
+        {
+            this.superGrid = superGrid;
             ButtonClick = new RelayCommand((x) => OnButtonClick(x));
         }
 
@@ -120,15 +130,15 @@ namespace Super_tic_tac_toe.ViewModels
         /// <summary>
         /// Command bound to button clicks.  Must pass in int[] parameter.
         /// </summary>
-        public ICommand ButtonClick { get; }
+        public ICommand ButtonClick { get; private set; }
 
         private void OnButtonClick(object sender)
         {
             string name = sender.GetType().GetProperty("Name").GetValue(sender) as string;
-            int MoveXGrid = name[3] - '0';
-            int MoveYGrid = name[4] - '0';
-            int MoveX = name[5] - '0';
-            int MoveY = name[6] - '0';
+            int MoveX = name[4] - '0';
+            int MoveY = name[3] - '0';
+            int MoveXGrid = name[6] - '0';
+            int MoveYGrid = name[5] - '0';
 
             try
             {
@@ -136,10 +146,10 @@ namespace Super_tic_tac_toe.ViewModels
 
                 superGrid.ClaimCell(MoveXGrid, MoveYGrid, MoveX, MoveY);
 
-                string propertyName = "ImgSrc" + MoveXGrid.ToString()
+                string propertyName = "ImgSrc" + MoveX.ToString()
+                + MoveY.ToString()
                 + MoveYGrid.ToString()
-                + MoveX.ToString()
-                + MoveY.ToString();
+                + MoveXGrid.ToString();
                 
                 PropertyInfo property = this.GetType().GetProperty(propertyName);
                 property.SetValue(this, imageFilePath);
