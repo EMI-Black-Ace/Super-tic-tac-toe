@@ -143,7 +143,7 @@ namespace Super_tic_tac_toe.ViewModels
         #endregion
 
         /// <summary>
-        /// Command bound to button clicks.  Must pass in int[] parameter.
+        /// Command bound to button clicks.
         /// </summary>
         public ICommand ButtonClick { get; private set; }
 
